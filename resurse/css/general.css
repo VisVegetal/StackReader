@@ -1,0 +1,108 @@
+body{
+    --culoare-fundal: pink;
+    --culoare-contur: purple; 
+    --margine-pagina:120px;
+    background-color: var(--culoare-fundal);
+}
+
+p{
+    border: 1px solid var(--culoare-fundal);
+}
+
+
+main{
+    margin-left: var(--margine-pagina);
+    margin-right: var(--margine-pagina);
+}
+
+@media screen and (max-width:1200px) {
+
+    body{
+        --margine-pagina:80px;
+    }
+
+    #grid-pagina{
+    grid-template-columns: "1fr 1fr";
+    grid-template-areas: "welcome welcome"
+                        "promotii anunturi"
+                        "fig1 orar"
+                        "fig2 orar"
+                        "fig3 orar"
+                        "produse produse"
+                        "index-intrebari index-intrebari";
+}
+}
+
+
+
+@media screen and (max-width:700px) {
+    #grid-pagina{
+        display:block; 
+    }
+    body{
+        --margine-pagina:50px;
+    }
+}
+
+#grid-pagina{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: "2fr 1fr 2fr";
+    grid-template-areas: "welcome welcome welcome"
+                        "promotii promotii anunturi"
+                        "fig1 orar orar"
+                        "fig2 orar orar"
+                        "fig3 orar orar"
+                        "produse produse produse"
+                        "index-intrebari index-intrebari index-intrebari";
+}
+
+
+#grid-pagina > *{
+    border : 1px solid var(--culoare-contur);
+    padding: 10px;
+    box-shadow: 0px 0px 5px var(--culoare-contur);
+}
+
+figure{/*resetare spatiere*/
+    margin:0;
+}
+
+figure > img{
+    width: 100%;
+}
+#welcome{
+    grid-area: welcome;
+}
+#promotii{
+    grid-area: promotii;
+}
+#anunturi{
+    grid-area: anunturi;
+}
+#orar{
+    grid-area: orar;
+}
+ 
+#fig1{
+    grid-area: fig1;
+}
+#fig2{
+    grid-area: fig2;
+}
+#fig3{
+    grid-area: fig3;
+}
+#produse{
+    grid-area: produse;
+}
+
+#index-intrebari{
+    grid-area: index-intrebari;
+}
+
+.monsieur-la-doulaise-regular {
+  font-family: "Monsieur La Doulaise", cursive;
+  font-weight: 400;
+  font-style: normal;
+}

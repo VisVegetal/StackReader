@@ -1,14 +1,7 @@
 <!DOCTYPE html>
 <html lang="ro">
-<!--Cerinte:
-    1. creare folder + index.html
-    3. textul trebuie sa contina cuvintele cheie
-    5. impartirea body-ului in header, main, footer
-    -->
-   
 
 <head>
-    <!--2.tag-uri meta-->
     <meta charset="UTF-8">
     <meta name="author" content="Niculae Maria-Alexandra">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,36 +9,31 @@
         content="StackReader este o platformă modernă de e-commerce dedicată pasionaților de lectură, oferind un portofoliu vast de titluri dintr-o multitudine de domenii de interes.">
     <meta name="keywords"
         content="StackReader, cărți, cumpără online, librărie București, recenzii, recomandări editoriale, noutăți, reducere, abonament, bibliotecă digitală">
-    <!--4.favicon-->
     <link rel="icon" type="image/png" href="./resurse/ico/favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="./resurse/ico/favicon/favicon.svg" />
     <link rel="shortcut icon" href="./resurse/ico/favicon/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="./resurse/ico/favicon/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="MyWebSite" />
     <link rel="manifest" href="./resurse/ico/favicon/site.webmanifest" />
-
+    <link rel="stylesheet" href="./resurse/css/general.css" />
+    <script src="https://kit.fontawesome.com/6f092a9687.js" crossorigin="anonymous"></script>
     <title>StackReader - Librăria Ta Digitală</title>
 </head>
 
 <body>
-
     <header>
-        <!--6. folosire tag section-->
         <section id="titlu">
-            <!--7. folosire tag hgroup-->
             <hgroup>
                 <h1 id="t">StackReader</h1>
                 <p>Lumea cărților la picioarele tale</p>
             </hgroup>
         </section>
-        <!--8. folosire tag nav-->
         <nav>
             <section>
-                <label id="hamburger" for="ch-menu"
-                    style="display: flex; flex-direction: column; justify-content: space-between; width: 30px; height: 20px; cursor: pointer;">
-                    <span class="linie-hamburger" style="display: block; width: 100%; height: 3px; background-color: black;"></span>
-                    <span class="linie-hamburger" style="display: block; width: 100%; height: 3px; background-color: black;"></span>
-                    <span class="linie-hamburger" style="display: block; width: 100%; height: 3px; background-color: black;"></span>
+                <label id="hamburger" for="ch-menu">
+                    <span class="linie-hamburger"></span>
+                    <span class="linie-hamburger"></span>
+                    <span class="linie-hamburger"></span>
                 </label>
             </section>
 
@@ -71,145 +59,48 @@
         </nav>
     </header>
 
-    <main>
-        <div id="grid-pagina">
-            <!--9. folosire tag blockquote-->
-            <blockquote
-                cite="https://www.goodreads.com/quotes/2448-a-reader-lives-a-thousand-lives-before-he-dies-said-jojen">
-                <p>"Un cititor trăiește o mie de vieți înainte de a muri. Cel care nu citește niciodată trăiește doar
-                    una."</p>
-                <footer>— <cite>George R.R. Martin</cite>, recomandarea editorilor **StackReader**</footer>
-            </blockquote>
-            <!--9. folosire tag p-->
-            <!--12. folosire tag strong, b, i-->
-            <p class="intro"><b>StackReader</b> este o platformă modernă de e-commerce dedicată pasionaților de lectură,
-                concepută pentru a reuni un portofoliu vast de titluri.</p>
-
-            <p class="anunt-important">
-                <strong><i>ATENȚIE:</i> Cititul excesiv de cărți de calitate poate cauza simptome severe de cultură
-                    generală și o poftă subită de a corecta gramatica prietenilor pe internet!</strong>
-            </p>
-
-            <div class="intro-oferte">
-                <div>Ficțiune</div>
-                <div>Non-Ficțiune</div>
-                <div>Dezvoltare Personală</div>
-                <div>Copii și Adolescenți</div>
-                <div>Artă & Design</div>
-            </div>
-
-            <p class="anunt intro">
-                <!--12. folosire tag em-->
-                Prin intermediul unei interfețe intuitive, oferim servicii de <b>cumpăra online</b>,
-                filtrare avansată și recomandări editoriale <em>absolut</em> vitale pentru supraviețuirea ta socială,
-                în cazul în care mai plănuiești să ieși din casă și să pari un intelectual <em>veritabil</em>.
-            </p>
-
-            <div id="dv-prezentare-1">
-                <div id="dv-prezentare">
-                    <a href="./resurse/imagini/stackreader.jpeg" target="_self">
-                        <picture>
-                            <source srcset="./resurse/imagini/biblioteca-200x200.jpg" media="(max-width:700px)" />
-                            <source srcset="./resurse/imagini/biblioteca.jpg" media="(max-width:1200px)" />
-                            <img src="./resurse/imagini/stackreader.jpeg" alt="Librăria digitală StackReader" title="Apasă pentru a vedea imaginea mare" />
-                        </picture>
-                    </a>
+    <main id="main-grid">
+        <section id="zona-1">
+            <div class="f-pattern-content">
+                <div class="container-iconite">
+                    <i class="fa-solid fa-book-open"></i> <i class="fa-solid fa-heart fa-beat"></i>
                 </div>
+                <blockquote
+                    cite="https://www.goodreads.com/quotes/2448-a-reader-lives-a-thousand-lives-before-he-dies-said-jojen">
+                    <p>"Un cititor trăiește o mie de vieți înainte de a muri. Cel care nu citește niciodată trăiește
+                        doar una."</p>
+                    <footer>— <cite>George R.R. Martin</cite>, recomandarea editorilor **StackReader**</footer>
+                </blockquote>
+
+                <p class="intro"><b>StackReader</b> este o platformă modernă de e-commerce dedicată pasionaților de
+                    lectură,
+                    concepută pentru a reuni un portofoliu vast de titluri.</p>
+
+                <p class="anunt-important">
+                    <strong><i>ATENȚIE:</i> Cititul excesiv de cărți de calitate poate cauza simptome severe de cultură
+                        generală și o poftă subită de a corecta gramatica prietenilor pe internet!</strong>
+                </p>
             </div>
+        </section>
 
-            <hr class="separator-sectiune" />
+        <section id="zona-5">
+            <h3>Cititori Activi</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. În acest moment, comunitatea noastră numără
+                peste 150 de utilizatori online care explorează rafturile digitale.</p>
+        </section>
 
-            <section id="recomandare-editor">
-                <h2>Recomandarea Săptămânii</h2>
-                <figure>
-                    <picture>
-                        <source srcset="./resurse/imagini/the_long_walk.png" media="(min-width: 1024px)">
-                        <source srcset="./resurse/imagini/the_long_walk.png" media="(min-width: 600px)">
-                        <img src="./resurse/imagini/the_long_walk.png" alt="Coperta unei cărți recomandate"
-                            title="Apasă pentru detalii despre autor și recenzii" 
-                            style="width: 250px; height: auto; border-radius: 5px; box-shadow: 5px 5px 15px rgba(0,0,0,0.2);">
-                    </picture>
-                    <figcaption>
-                        <strong>"The Long Walk"</strong>-<i>Stephen King</i>
-                        - Un thriller distopic care explorează limitele rezistenței umane într-un joc mortal.
-                    </figcaption>
-                </figure>
-                <!--6. folosire tag article-->
-                <article>
-                    <!--16.folosire meter-->
-                    <h3>Popularitatea titlului "The Long Walk"</h3>
-                    <p>Aprecierea cititorilor noștri pentru acest <i>Bestseller</i>:</p>
-                    Nota comunității: <meter value="92" min="0" max="100" low="40" high="85" optimum="95"></meter>
-                    (92% feedback pozitiv din partea cititorilor).
-                </article>
-            </section>
+        <section id="zona-6">
+            <h3>Statistici Comunitate</h3>
+            <p>Lorem ipsum dolor sit amet. Peste 5000 de recenzii postate luna aceasta și un index de satisfacție al
+                cititorilor de 98%.</p>
+        </section>
 
-            <div id="container-video">
-                <img style="width: 100px; height: 150px;" class="decor" src="resurse/imagini/bookmark.jpeg"
-                    alt="element decorativ" title="Universul StackReader">
-                <div id="centrare-video">
-                    <div id="clip-video">
-                        <div id="stil-video">
-                            <video width="320" height="240" playsinline autoplay loop muted>
-                                <source src="resurse/video/video.mp4" type="video/mp4">
-                                <source src="resurse/video/video.ogv" type="video/ogv">
-                                <track default src="resurse/vtt/ro.vtt" kind="captions" srclang="ro" label="romana">
-                                <track src="resurse/vtt/en.vtt" kind="captions" srclang="en" label="engleza">
-                            </video>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <section id="zona-7">
+            <h3>Status Server</h3>
+            <p>Lorem ipsum: Server status - Online. Latență: 24ms. Versiune platformă: StackReader v2.4.6.</p>
+        </section>
 
-            <section id="promotii">
-                <h2>Promoții și Oferte</h2>
-                <article>
-                    <h3 class="titlu">Super ofertă de weekend</h3>
-                    <p><b>StackReader</b> oferă <b>reduceri de <s>10%</s> <ins>15%</ins></b> pentru toate produsele din
-                        categoria Bestsellers.</p>
-                    <p>Oferta este valabilă sâmbăta și duminica pentru toți membrii comunității noastre.</p>
-                    <!--bous 1. mathml-->
-                    <p>Calculul prețului final se realizează conform formulei:</p>
-                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-                        <msub>
-                            <mi>P</mi>
-                            <mtext>final</mtext>
-                        </msub>
-                        <mo>=</mo>
-                        <msub>
-                            <mi>P</mi>
-                            <mtext>inițial</mtext>
-                        </msub>
-                        <mo>-</mo>
-                        <mfenced>
-                            <mrow>
-                                <msub>
-                                    <mi>P</mi>
-                                    <mtext>inițial</mtext>
-                                </msub>
-                                <mo>×</mo>
-                                <mfrac>
-                                    <mn>15</mn>
-                                    <mn>100</mn>
-                                </mfrac>
-                            </mrow>
-                        </mfenced>
-                    </math>
-                </article>
-
-                <article>
-                    <h3>Pachete Speciale</h3>
-                    <p>Profită de selecțiile noastre editoriale:</p>
-                    <ol>
-                        <li>Un roman contemporan la alegere</li>
-                        <li>Un titlu de dezvoltare personală</li>
-                        <li>O enciclopedie pentru copii</li>
-                        <li>Gratis: Acces la blogul literar</li>
-                        <li>Gratis: Puncte de recompensă bonus </li>
-                    </ol>
-                </article>
-            </section>
-            <!--10. sectiunea evenimente-->>
+        <section id="zona-3">
             <section id="evenimente">
                 <h2>Evenimente și Lansări Literare</h2>
                 <p>Rămâi la curent cu activitățile comunității noastre:</p>
@@ -220,7 +111,6 @@
                         <b>Seara de lectură: Thriller & Mystery</b> -
                         O sesiune interactivă dedicată pasionaților de suspans.
                         <br>
-                        <!--17.folosire meter-->
                         Locuri ocupate: <meter value="15" min="0" max="100" low="30" high="80" optimum="90"></meter>
                         (Doar 15 participanți confirmați momentan).
                     </li>
@@ -236,242 +126,380 @@
                     </li>
                 </ul>
             </section>
-
-            <section id="produse">
-                <h2>Produsele Noastre</h2>
-                <p>Catalogul complet organizat pe domenii de interes:</p>
-
-                <section>
-                    <h3>Ficțiune</h3>
-                    <ul>
-                        <li>Roman Contemporan</li>
-                        <li>Thriller & Mystery</li>
-                        <li>Fantasy</li>
-                        <li>SF</li>
-                        <li>Literatură Clasică</li>
-                        <li>Poezie</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h3>Non-Ficțiune</h3>
-                    <ul>
-                        <li>Biografii & Memorii</li>
-                        <li>Istorie & Politică</li>
-                        <li>Științe</li>
-                        <li>Business & Economie</li>
-                        <li>Psihologie</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h3>Dezvoltare Personală & Stil de viață</h3>
-                    <ul>
-                        <li>Parenting</li>
-                        <li>Sănătate & Nutriție</li>
-                        <li>Gastronomie </li>
-                        <li>Hobby-uri & Timp Liber</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h3>Copii și Adolescenți</h3>
-                    <ul>
-                        <li>Cărți Ilustrate</li>
-                        <li>Young Adult</li>
-                        <li>Literatură Școlară</li>
-                        <li>Enciclopedii pentru copii</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h3>Artă & Design</h3>
-                    <ul>
-                        <li>Albume de Artă</li>
-                        <li>Fotografie</li>
-                        <li>Arhitectură</li>
-                        <li>Design Interior</li>
-                    </ul>
-                </section>
-            </section>
-
-            <!--16. întrebări frecvente-->
-            <section id="faq-si-detalii">
-                <h2>Întrebări Frecvente și Detalii Servicii</h2>
-                <p>Apasă pe secțiunile de mai jos pentru a afla mai multe despre experiența StackReader.</p>
-
-                <details>
-                    <summary>Cum funcționează sistemul de puncte de recompensă?</summary>
-                    <p>Fiecare achiziție efectuată pe platforma noastră îți aduce puncte de recompensă.</p>
-                </details>
-
-                <details>
-                    <summary>Care sunt condițiile pentru Garanția de Retur?</summary>
-                    <p>Oferim o <b>Garanție de Retur</b> conform legii. Returul se face în 14 zile.</p>
-                </details>
-
-                <details>
-                    <summary>Cum pot primi recomandări editoriale personalizate?</summary>
-                    <p>Specialiștii noștri oferă <b>recomandări editoriale</b> adaptate în funcție de istoricul tău de cumpărături.</p>
-                </details>
-
-                <details>
-                    <summary>Ce avantaje oferă un abonament StackReader?</summary>
-                    <p>Un <b>abonament</b> activ îți oferă acces la biblioteca digitală și transport gratuit la orice comandă.</p>
-                </details>
-
-                <details>
-                    <summary>Pot ridica o comandă direct de la librărie București?</summary>
-                    <p>Da, selectează ridicarea de la sediul nostru din <b>librărie București</b> pentru a evita taxele de curier.</p>
-                </details>
-
-                <details>
-                    <summary>Cum sunt protejate datele mele personale (GDPR)?</summary>
-                    <p>StackReader respectă confidențialitatea datelor tale conform noilor reglementări europene.</p>
-                </details>
-            </section>
-        </div>
-
-        <section id="galerie-statica">
-            <h2>Galerie Colecții</h2>
-            <div id="grid-galerie">
-                <!--11. folosire tag figure-->
-                <figure>
-                    <a href="./resurse/imagini/fantasy.jpeg" target="_self">
-                        <img src="./resurse/imagini/fantasy.jpeg" alt="Ficțiune" style="width: 200px; height: 300px;">
-                    </a>
-                    <figcaption>Ficțiune: Fantasy & SF</figcaption>
-                </figure>
-                <figure>
-                    <a href="./resurse/imagini/nonfiction.jpg" target="_self">
-                        <img src="./resurse/imagini/nonfiction.jpg" alt="Carte istorie" style="width: 200px; height: 300px;">
-                    </a>
-                    <figcaption>Non-Ficțiune: Istorie</figcaption>
-                </figure>
-                <figure>
-                    <a href="./resurse/imagini/arta.jpg" target="_self">
-                        <img src="./resurse/imagini/arta.jpg" alt="Album arta" style="width: 200px; height: 300px;">
-                    </a>
-                    <figcaption>Artă & Design</figcaption>
-                </figure>
-                <figure>
-                    <a href="./resurse/imagini/carte_copii.jpg" target="_self">
-                        <img src="./resurse/imagini/carte_copii.jpg" alt="Carte ilustrată" style="width: 200px; height: 300px;">
-                    </a>
-                    <figcaption>Copii și Adolescenți</figcaption>
-                </figure>
+            <div class="calendar-placeholder">
+                <p><i>Placeholder Calendar:</i> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                    tempor incididunt ut labore.</p>
             </div>
         </section>
 
-        <section id="resurse-externe">
-            <h2>Resurse utile pentru cititori</h2>
-            <ul>
-                <!--13.a. link catre o resursa externa-->
-                <li>Vizitează <a href="https://www.goodreads.com" target="_blank">Goodreads</a> pentru recenzii externe.</li>
-                <!--13.b. link catre o resursa externa referentiata prin id-->
-                <li>Referință istorică: <a href="https://www.britannica.com/topic/history-of-publishing/The-age-of-early-printing#ref285511">https://www.britannica.com/<wbr>topic/<wbr>history-of-publishing/<wbr>The-age-of-early-printing<wbr>#ref285511</a></li>
-                <!--13.e. descarcare link-->
-                <li><a href="https://manualedigitaleart.ro/docs/clasa_V/romana/ghid-romana-clasa-5.pdf" download="ghid_stackreader_final.pdf">Descarcă Ghidul StackReader</a></li>
-            </ul>
+        <section id="zona-4">
+            <h3>Anunțuri Recente</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <b>Notă:</b> Livrările în București se fac în
+                maximum 24h!</p>
+            <p>Lorem ipsum: Abonează-te la newsletter pentru a primi coduri de reducere exclusive direct în inbox-ul
+                tău.</p>
         </section>
-        
-        <!--bonus 2. embed-->
-        <section id="vizualizare-pdf">
-            <h2>Previzualizare Ghid Lectură</h2>
-            <embed src="https://manualedigitaleart.ro/docs/clasa_V/romana/ghid-romana-clasa-5.pdf" type="application/pdf" style="width: 200px; height: 300px;">
+
+        <section id="zona-2">
+            <section id="orar-sediu">
+                <h2>Program de Funcționare și Suport</h2>
+                <table id="tab-orar">
+                    <caption>Programul de lucru al sediului StackReader</caption>
+                    <thead>
+                        <tr>
+                            <th>Categorie Zile</th>
+                            <th>Ziua Săptămânii</th>
+                            <th>Program Sediu</th>
+                            <th>Suport Call Center</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="5">Zile Lucrătoare</td>
+                            <td>Luni - Joi</td>
+                            <td>09:00 - 18:00</td>
+                            <td>08:00 - 20:00</td>
+                        </tr>
+                        <tr>
+                            <td>Vineri</td>
+                            <td>09:00 - 17:00</td>
+                            <td>08:00 - 19:00</td>
+                        </tr>
+                        <tr>
+                            <td>Sâmbătă</td>
+                            <td>10:00 - 14:00</td>
+                            <td>10:00 - 16:00</td>
+                        </tr>
+                        <tr>
+                            <td>Duminică</td>
+                            <td>Închis</td>
+                            <td>Închis</td>
+                        </tr>
+                        <tr>
+                            <td>Sărbători</td>
+                            <td>Închis</td>
+                            <td>Închis</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="4"><strong>Notă:</strong> Închis în prima zi a lunii.</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </section>
         </section>
-        <!--14.video-uri-->
-        <section id="evenimente-video">
-            <h2>Lansări și Recomandări</h2>
-            <div class="container-iframe">
-                <div class="taburi-iframe">
-                    <a href="https://www.youtube.com/embed/MoejU-tf4xI" target="ifr-video">Interviuri Autori</a>
-                    <a href="https://www.youtube.com/embed/8tHex7_DJl8" target="ifr-video">Recomandări Lunare</a>
-                    <a href="https://www.youtube.com/embed/Na9AxURjRcY" target="ifr-video">Evenimente Live</a>
+
+        <section id="zona-8">
+            <div class="creative-wrapper">
+                <p class="anunt intro">
+                    Prin intermediul unei interfețe intuitive, oferim servicii de <b>cumpăra online</b>,
+                    filtrare avansată și recomandări editoriale <em>absolut</em> vitale pentru supraviețuirea ta
+                    socială,
+                    în cazul în care mai plănuiești să ieși din casă și să pari un intelectual <em>veritabil</em>.
+                </p>
+                <div id="dv-prezentare-1">
+                    <div id="dv-prezentare">
+                        <a href="./resurse/imagini/stackreader.jpeg" target="_self">
+                            <picture>
+                                <source srcset="./resurse/imagini/biblioteca-200x200.jpg" media="(max-width:700px)" />
+                                <source srcset="./resurse/imagini/biblioteca.jpg" media="(max-width:1200px)" />
+                                <img src="./resurse/imagini/stackreader.jpeg" alt="Librăria digitală StackReader"
+                                    title="Apasă pentru a vedea imaginea mare" />
+                            </picture>
+                        </a>
+                    </div>
                 </div>
-                <iframe width="560" height="315" src="./resurse/video/biblioteca.mp4" name="ifr-video"
-                    title="StackReader Video Content" frameborder="0" allowfullscreen></iframe>
-            </div>
-        </section>
-        <!--15. tabel-->
-        <section id="orar-sediu">
-            <h2>Program de Funcționare și Suport</h2>
-            <table id="tab-orar">
-                <caption>Programul de lucru al sediului StackReader</caption>
-                <thead>
-                    <tr>
-                        <th>Categorie Zile</th>
-                        <th>Ziua Săptămânii</th>
-                        <th>Program Sediu</th>
-                        <th>Suport Call Center</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td rowspan="5">Zile Lucrătoare</td>
-                        <td>Luni - Joi</td>
-                        <td>09:00 - 18:00</td>
-                        <td>08:00 - 20:00</td>
-                    </tr>
-                    <tr>
-                        <td>Vineri</td>
-                        <td>09:00 - 17:00</td>
-                        <td>08:00 - 19:00</td>
-                    </tr>
-                    <tr>
-                        <td>Sâmbătă</td>
-                        <td>10:00 - 14:00</td>
-                        <td>10:00 - 16:00</td>
-                    </tr>
-                    <tr>
-                        <td>Duminică</td>
-                        <td>Închis</td>
-                        <td>Închis</td>
-                    </tr>
-                    <tr>
-                        <td>Sărbători</td>
-                        <td>Închis</td>
-                        <td>Închis</td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr><td colspan="4"><strong>Notă:</strong> Închis în prima zi a lunii.</td></tr>
-                </tfoot>
-            </table>
-        </section>
 
-        <section id="servicii-clienti">
-            <h3>Servicii și Loialitate</h3>
-            <!--9. folosire tag dl-->
-            <dl>
-                <dt>Programe de Loialitate</dt>
-                <dd>Abonament și puncte bonus.</dd>
-                <dt>Asistență</dt>
-                <dd>Call Center și Garanție Retur.</dd>
-            </dl>
+                <hr class="separator-sectiune" />
+
+                <section id="recomandare-editor">
+                    <h2>Recomandarea Săptămânii</h2>
+                    <figure>
+                        <picture>
+                            <source srcset="./resurse/imagini/the_long_walk.png" media="(min-width: 1024px)">
+                            <source srcset="./resurse/imagini/the_long_walk.png" media="(min-width: 600px)">
+                            <img src="./resurse/imagini/the_long_walk.png" alt="Coperta unei cărți recomandate"
+                                title="Apasă pentru detalii despre autor și recenzii" class="img-recomandare">
+                        </picture>
+                        <figcaption>
+                            <strong>"The Long Walk"</strong>-<i>Stephen King</i>
+                            - Un thriller distopic care explorează limitele rezistenței umane într-un joc mortal.
+                        </figcaption>
+                    </figure>
+                    <article>
+                        <h3>Popularitatea titlului "The Long Walk"</h3>
+                        <p>Aprecierea cititorilor noștri pentru acest <i>Bestseller</i>:</p>
+                        Nota comunității: <meter value="92" min="0" max="100" low="40" high="85" optimum="95"></meter>
+                        (92% feedback pozitiv din partea cititorilor).
+                    </article>
+                </section>
+
+                <div id="container-video">
+                    <img style="width: 100px; height: 150px;" class="decor" src="resurse/imagini/bookmark.jpeg"
+                        alt="element decorativ" title="Universul StackReader">
+                    <div id="centrare-video">
+                        <div id="clip-video">
+                            <div id="stil-video">
+                                <video width="320" height="240" playsinline autoplay loop muted>
+                                    <source src="resurse/video/video.mp4" type="video/mp4">
+                                    <source src="resurse/video/video.ogv" type="video/ogv">
+                                    <track default src="resurse/vtt/ro.vtt" kind="captions" srclang="ro" label="romana">
+                                    <track src="resurse/vtt/en.vtt" kind="captions" srclang="en" label="engleza">
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <section id="promotii">
+                    <h2>Promoții și Oferte</h2>
+                    <article>
+                        <h3 class="titlu">Super ofertă de weekend</h3>
+                        <p><b>StackReader</b> oferă <b>reduceri de <s>10%</s> <ins>15%</ins></b> pentru toate produsele
+                            din
+                            categoria Bestsellers.</p>
+                        <p>Oferta este valabilă sâmbăta și duminica pentru toți membrii comunității noastre.</p>
+                        <p>Calculul prețului final se realizează conform formulei:</p>
+                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                            <msub>
+                                <mi>P</mi>
+                                <mtext>final</mtext>
+                            </msub>
+                            <mo>=</mo>
+                            <msub>
+                                <mi>P</mi>
+                                <mtext>inițial</mtext>
+                            </msub>
+                            <mo>-</mo>
+                            <mfenced>
+                                <mrow>
+                                    <msub>
+                                        <mi>P</mi>
+                                        <mtext>inițial</mtext>
+                                    </msub>
+                                    <mo>×</mo>
+                                    <mfrac>
+                                        <mn>15</mn>
+                                        <mn>100</mn>
+                                    </mfrac>
+                                </mrow>
+                            </mfenced>
+                        </math>
+                    </article>
+
+                    <article>
+                        <h3>Pachete Speciale</h3>
+                        <p>Profită de selecțiile noastre editoriale:</p>
+                        <ol>
+                            <li>Un roman contemporan la alegere</li>
+                            <li>Un titlu de dezvoltare personală</li>
+                            <li>O enciclopedie pentru copii</li>
+                            <li>Gratis: Acces la blogul literar</li>
+                            <li>Gratis: Puncte de recompensă bonus </li>
+                        </ol>
+                    </article>
+                </section>
+
+                <section id="produse">
+                    <h2>Produsele Noastre</h2>
+                    <p>Catalogul complet organizat pe domenii de interes:</p>
+
+                    <section>
+                        <h3>Ficțiune</h3>
+                        <ul>
+                            <li>Roman Contemporan</li>
+                            <li>Thriller & Mystery</li>
+                            <li>Fantasy</li>
+                            <li>SF</li>
+                            <li>Literatură Clasică</li>
+                            <li>Poezie</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3>Non-Ficțiune</h3>
+                        <ul>
+                            <li>Biografii & Memorii</li>
+                            <li>Istorie & Politică</li>
+                            <li>Științe</li>
+                            <li>Business & Economie</li>
+                            <li>Psihologie</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3>Dezvoltare Personală & Stil de viață</h3>
+                        <ul>
+                            <li>Parenting</li>
+                            <li>Sănătate & Nutriție</li>
+                            <li>Gastronomie </li>
+                            <li>Hobby-uri & Timp Liber</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3>Copii și Adolescenți</h3>
+                        <ul>
+                            <li>Cărți Ilustrate</li>
+                            <li>Young Adult</li>
+                            <li>Literatură Școlară</li>
+                            <li>Enciclopedii pentru copii</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3>Artă & Design</h3>
+                        <ul>
+                            <li>Albume de Artă</li>
+                            <li>Fotografie</li>
+                            <li>Arhitectură</li>
+                            <li>Design Interior</li>
+                        </ul>
+                    </section>
+                </section>
+                <section id="faq-si-detalii">
+                    <h2>Întrebări Frecvente și Detalii Servicii</h2>
+                    <p>Apasă pe secțiunile de mai jos pentru a afla mai multe despre experiența StackReader.</p>
+
+                    <details>
+                        <summary>Cum funcționează sistemul de puncte de recompensă?</summary>
+                        <p>Fiecare achiziție efectuată pe platforma noastră îți aduce puncte de recompensă.</p>
+                    </details>
+
+                    <details>
+                        <summary>Care sunt condițiile pentru Garanția de Retur?</summary>
+                        <p>Oferim o <b>Garanție de Retur</b> conform legii. Returul se face în 14 zile.</p>
+                    </details>
+
+                    <details>
+                        <summary>Cum pot primi recomandări editoriale personalizate?</summary>
+                        <p>Specialiștii noștri oferă <b>recomandări editoriale</b> adaptate în funcție de istoricul tău
+                            de cumpărături.</p>
+                    </details>
+
+                    <details>
+                        <summary>Ce avantaje oferă un abonament StackReader?</summary>
+                        <p>Un <b>abonament</b> activ îți oferă acces la biblioteca digitală și transport gratuit la
+                            orice comandă.</p>
+                    </details>
+
+                    <details>
+                        <summary>Pot ridica o comandă direct de la librărie București?</summary>
+                        <p>Da, selectează ridicarea de la sediul nostru din <b>librărie București</b> pentru a evita
+                            taxele de curier.</p>
+                    </details>
+
+                    <details>
+                        <summary>Cum sunt protejate datele mele personale (GDPR)?</summary>
+                        <p>StackReader respectă confidențialitatea datelor tale conform noilor reglementări europene.
+                        </p>
+                    </details>
+                </section>
+            </div>
+
+            <section id="galerie-statica">
+                <h2>Galerie Colecții</h2>
+                <div id="grid-galerie">
+                    <!--11. folosire tag figure-->
+                    <figure>
+                        <a href="./resurse/imagini/fantasy.jpeg" target="_self">
+                            <img src="./resurse/imagini/fantasy.jpeg" alt="Ficțiune"
+                                style="width: 200px; height: 300px;">
+                        </a>
+                        <figcaption>Ficțiune: Fantasy & SF</figcaption>
+                    </figure>
+                    <figure>
+                        <a href="./resurse/imagini/nonfiction.jpg" target="_self">
+                            <img src="./resurse/imagini/nonfiction.jpg" alt="Carte istorie"
+                                style="width: 200px; height: 300px;">
+                        </a>
+                        <figcaption>Non-Ficțiune: Istorie</figcaption>
+                    </figure>
+                    <figure>
+                        <a href="./resurse/imagini/arta.jpg" target="_self">
+                            <img src="./resurse/imagini/arta.jpg" alt="Album arta" style="width: 200px; height: 300px;">
+                        </a>
+                        <figcaption>Artă & Design</figcaption>
+                    </figure>
+                    <figure>
+                        <a href="./resurse/imagini/carte_copii.jpg" target="_self">
+                            <img src="./resurse/imagini/carte_copii.jpg" alt="Carte ilustrată"
+                                style="width: 200px; height: 300px;">
+                        </a>
+                        <figcaption>Copii și Adolescenți</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <section id="resurse-externe">
+                <h2>Resurse utile pentru cititori</h2>
+                <ul>
+                    <li>Vizitează <a href="https://www.goodreads.com" target="_blank">Goodreads</a> pentru recenzii
+                        externe.</li>
+                    <li>Referință istorică: <a
+                            href="https://www.britannica.com/topic/history-of-publishing/The-age-of-early-printing#ref285511">Britannica
+                            - History of Publishing</a></li>
+                    <li><a href="https://manualedigitaleart.ro/docs/clasa_V/romana/ghid-romana-clasa-5.pdf"
+                            download="ghid_stackreader_final.pdf">Descarcă Ghidul StackReader</a></li>
+                </ul>
+            </section>
+
+            <section id="vizualizare-pdf">
+                <h2>Previzualizare Ghid Lectură</h2>
+                <embed src="https://manualedigitaleart.ro/docs/clasa_V/romana/ghid-romana-clasa-5.pdf"
+                    type="application/pdf" style="width: 200px; height: 300px;">
+            </section>
+
+            <section id="evenimente-video">
+                <h2>Lansări și Recomandări</h2>
+                <div class="container-iframe">
+                    <div class="taburi-iframe">
+                        <a href="https://www.youtube.com/embed/MoejU-tf4xI" target="ifr-video">Interviuri Autori</a>
+                        <a href="https://www.youtube.com/embed/8tHex7_DJl8" target="ifr-video">Recomandări
+                            Lunare</a>
+                        <a href="https://www.youtube.com/embed/Na9AxURjRcY" target="ifr-video">Evenimente Live</a>
+                    </div>
+                    <iframe width="560" height="315" src="./resurse/video/biblioteca.mp4" name="ifr-video"
+                        title="StackReader Video Content" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </section>
+
+            <section id="servicii-clienti">
+                <h3>Servicii și Loialitate</h3>
+                <dl>
+                    <dt>Programe de Loialitate</dt>
+                    <dd>Abonament și puncte bonus.</dd>
+                    <dt>Asistență</dt>
+                    <dd>Call Center și Garanție Retur.</dd>
+                </dl>
+            </section>
+            </div>
         </section>
     </main>
-    <!--18.footer-->
+
     <footer id="subsol">
-        <!--13.c. link care duce la începutul paginii-->
-        <a href="#" title="mergi sus" id="link-top">
-            Mergi sus la începutul paginii
-            <div id="triunghi"></div>
+        <a href="#" id="link-top" title="Înapoi sus">
+            <div id="cerc-sageata">
+                <span id="sageata">&#8593;</span>
+            </div>
+            <span class="tooltip-text">Sari la începutul paginii</span>
         </a>
         <section id="info-contact">
             <h4>Contact Rapid</h4>
             <address>
                 StackReader S.R.L.<br>
-                Strada Academiei 14, București (lângă <a href="https://maps.app.goo.gl/355rA27wzKjXz4e7A" target="_blank">Facultatea de Matematică și Informatică</a>)<br>
+                Strada Academiei 14, București (lângă <a href="https://maps.app.goo.gl/355rA27wzKjXz4e7A"
+                    target="_blank">Facultatea de Matematică și Informatică</a>)<br>
                 E-mail: <a href="mailto:contact@stackreader.ro">contact@stackreader.ro</a><br>
                 Tel: <a href="tel:+40721111111">+40 721 111 111</a><br>
                 WhatsApp: <a href="https://wa.me/40721111111">Chat cu noi</a>
             </address>
-            
-            <!--bonus 4. iframe harta-->>
+
             <div id="harta-iframe">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2848.8450143891414!2d26.09886367664645!3d44.43635560155694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1ff4467f67755%3A0x6a05e3262078658a!2sFacultatea%20de%20Matematic%C4%83%20%C8%99i%20Informatic%C4%83!5e0!3m2!1sro!2sro!4v1700000000000!5m2!1sro!2sro" 
-                width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy" title="Locație sediu pe hartă"></iframe>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2848.8450143891414!2d26.09886367664645!3d44.43635560155694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1ff4467f67755%3A0x6a05e3262078658a!2sFacultatea%20de%20Matematic%C4%83%20%C8%99i%20Informatic%C4%83!5e0!3m2!1sro!2sro!4v1700000000000!5m2!1sro!2sro"
+                    width="300" height="200" allowfullscreen="" loading="lazy" title="Locație sediu pe hartă"></iframe>
             </div>
         </section>
 
@@ -486,8 +514,10 @@
             </nav>
         </section>
 
-        <small>© <time datetime="2026-03-19">19 martie 2026</time> StackReader - Realizat de Niculae Maria-Alexandra</small>
+        <small>© <time datetime="2026-03-19">19 martie 2026</time> StackReader - Realizat de Niculae
+            Maria-Alexandra</small>
     </footer>
 
 </body>
+
 </html>

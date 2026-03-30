@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html lang="ro">
+<!--cerinta 1: creare folder + index.html-->
+<!--cerinta 3: textul trebuie sa contina cuvintele cheie-->
+<!--cerinta 5 : impartire header, main, footer-->
+<!--cerinta 12: b, i, em, strong-->
 
 <head>
+    <!--cerinta 2: tag-urile meta-->
     <meta charset="UTF-8">
     <meta name="author" content="Niculae Maria-Alexandra">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +14,7 @@
         content="StackReader este o platformă modernă de e-commerce dedicată pasionaților de lectură, oferind un portofoliu vast de titluri dintr-o multitudine de domenii de interes.">
     <meta name="keywords"
         content="StackReader, cărți, cumpără online, librărie București, recenzii, recomandări editoriale, noutăți, reducere, abonament, bibliotecă digitală">
+    <!--cerinta 4:favicon-->
     <link rel="icon" type="image/png" href="./resurse/ico/favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="./resurse/ico/favicon/favicon.svg" />
     <link rel="shortcut icon" href="./resurse/ico/favicon/favicon.ico" />
@@ -22,12 +28,16 @@
 
 <body>
     <header>
+        <!--cerinta 6: section-->
         <section id="titlu">
+            <!--cerinta 7: folosire hgroup-->
             <hgroup>
                 <h1 id="t">StackReader</h1>
+                <!--cerinta 9 : folosire p-->
                 <p>Lumea cărților la picioarele tale</p>
             </hgroup>
         </section>
+        <!--cerinta 8: folosire nav-->
         <nav>
             <section>
                 <label id="hamburger" for="ch-menu">
@@ -65,6 +75,7 @@
                 <div class="container-iconite">
                     <i class="fa-solid fa-book-open"></i> <i class="fa-solid fa-heart fa-beat"></i>
                 </div>
+                <!--cerinta9: folosire blockquote-->
                 <blockquote
                     cite="https://www.goodreads.com/quotes/2448-a-reader-lives-a-thousand-lives-before-he-dies-said-jojen">
                     <p>"Un cititor trăiește o mie de vieți înainte de a muri. Cel care nu citește niciodată trăiește
@@ -104,13 +115,14 @@
             <section id="evenimente">
                 <h2>Evenimente și Lansări Literare</h2>
                 <p>Rămâi la curent cu activitățile comunității noastre:</p>
-
+                <!--cerinta 10 - sectiune de evenimente-->
                 <ul class="lista-evenimente">
                     <li>
                         <time datetime="2026-04-15T18:00">15 aprilie, ora 18:00</time>,
                         <b>Seara de lectură: Thriller & Mystery</b> -
                         O sesiune interactivă dedicată pasionaților de suspans.
                         <br>
+                        <!--cerinta 17 : meter element-->
                         Locuri ocupate: <meter value="15" min="0" max="100" low="30" high="80" optimum="90"></meter>
                         (Doar 15 participanți confirmați momentan).
                     </li>
@@ -142,6 +154,7 @@
 
         <section id="zona-2">
             <section id="orar-sediu">
+                <!--cerinta 15 : table-->
                 <h2>Program de Funcționare și Suport</h2>
                 <table id="tab-orar">
                     <caption>Programul de lucru al sediului StackReader</caption>
@@ -198,23 +211,24 @@
                     socială,
                     în cazul în care mai plănuiești să ieși din casă și să pari un intelectual <em>veritabil</em>.
                 </p>
-                <div id="dv-prezentare-1">
-                    <div id="dv-prezentare">
-                        <a href="./resurse/imagini/stackreader.jpeg" target="_self">
-                            <picture>
-                                <source srcset="./resurse/imagini/biblioteca-200x200.jpg" media="(max-width:700px)" />
-                                <source srcset="./resurse/imagini/biblioteca.jpg" media="(max-width:1200px)" />
-                                <img src="./resurse/imagini/stackreader.jpeg" alt="Librăria digitală StackReader"
-                                    title="Apasă pentru a vedea imaginea mare" />
-                            </picture>
-                        </a>
-                    </div>
+                <div id="dv-prezentare">
+                    <!--cerinta 13: link care contine o imagine, cu posibilitatea de a da click si a o mari-->
+                    <a href="./resurse/imagini/stackreader.jpeg" target="_self">
+                        <picture>
+                            <source srcset="./resurse/imagini/biblioteca-200x200.jpg" media="(max-width:700px)" />
+
+                            <img src="./resurse/imagini/stackreader.jpeg" alt="Librăria digitală StackReader"
+                                title="Click pentru a mări imaginea în acest tab"
+                                style="width: 300px; cursor: zoom-in; border: 1px solid #ccc;">
+                        </picture>
+                    </a>
                 </div>
 
                 <hr class="separator-sectiune" />
 
                 <section id="recomandare-editor">
                     <h2>Recomandarea Săptămânii</h2>
+                    <!--cerinta 11 - figure și figcaption-->
                     <figure>
                         <picture>
                             <source srcset="./resurse/imagini/the_long_walk.png" media="(min-width: 1024px)">
@@ -227,17 +241,17 @@
                             - Un thriller distopic care explorează limitele rezistenței umane într-un joc mortal.
                         </figcaption>
                     </figure>
+                    <!--cerinta 6: article-->
                     <article>
                         <h3>Popularitatea titlului "The Long Walk"</h3>
                         <p>Aprecierea cititorilor noștri pentru acest <i>Bestseller</i>:</p>
+                        <!--cerinta 17 : meter element-->
                         Nota comunității: <meter value="92" min="0" max="100" low="40" high="85" optimum="95"></meter>
                         (92% feedback pozitiv din partea cititorilor).
                     </article>
                 </section>
 
                 <div id="container-video">
-                    <img style="width: 100px; height: 150px;" class="decor" src="resurse/imagini/bookmark.jpeg"
-                        alt="element decorativ" title="Universul StackReader">
                     <div id="centrare-video">
                         <div id="clip-video">
                             <div id="stil-video">
@@ -358,6 +372,7 @@
                         </ul>
                     </section>
                 </section>
+                <!--cerinta 16: faq si detalii -->
                 <section id="faq-si-detalii">
                     <h2>Întrebări Frecvente și Detalii Servicii</h2>
                     <p>Apasă pe secțiunile de mai jos pentru a afla mai multe despre experiența StackReader.</p>
@@ -404,28 +419,25 @@
                     <!--11. folosire tag figure-->
                     <figure>
                         <a href="./resurse/imagini/fantasy.jpeg" target="_self">
-                            <img src="./resurse/imagini/fantasy.jpeg" alt="Ficțiune"
-                                style="width: 200px; height: 300px;">
+                            <img src="./resurse/imagini/fantasy.jpeg" alt="Ficțiune">
                         </a>
                         <figcaption>Ficțiune: Fantasy & SF</figcaption>
                     </figure>
                     <figure>
                         <a href="./resurse/imagini/nonfiction.jpg" target="_self">
-                            <img src="./resurse/imagini/nonfiction.jpg" alt="Carte istorie"
-                                style="width: 200px; height: 300px;">
+                            <img src="./resurse/imagini/nonfiction.jpg" alt="Carte istorie">
                         </a>
                         <figcaption>Non-Ficțiune: Istorie</figcaption>
                     </figure>
                     <figure>
                         <a href="./resurse/imagini/arta.jpg" target="_self">
-                            <img src="./resurse/imagini/arta.jpg" alt="Album arta" style="width: 200px; height: 300px;">
+                            <img src="./resurse/imagini/arta.jpg" alt="Album arta">
                         </a>
                         <figcaption>Artă & Design</figcaption>
                     </figure>
                     <figure>
                         <a href="./resurse/imagini/carte_copii.jpg" target="_self">
-                            <img src="./resurse/imagini/carte_copii.jpg" alt="Carte ilustrată"
-                                style="width: 200px; height: 300px;">
+                            <img src="./resurse/imagini/carte_copii.jpg" alt="Carte ilustrată">
                         </a>
                         <figcaption>Copii și Adolescenți</figcaption>
                     </figure>
@@ -435,8 +447,10 @@
             <section id="resurse-externe">
                 <h2>Resurse utile pentru cititori</h2>
                 <ul>
+                    <!--cerinta 13: link-uri catre resurse externe-->
                     <li>Vizitează <a href="https://www.goodreads.com" target="_blank">Goodreads</a> pentru recenzii
                         externe.</li>
+                    <!--cerinta 13: link-uri catre o resursa referentiata prin id-->
                     <li>Referință istorică: <a
                             href="https://www.britannica.com/topic/history-of-publishing/The-age-of-early-printing#ref285511">Britannica
                             - History of Publishing</a></li>
@@ -447,11 +461,12 @@
 
             <section id="vizualizare-pdf">
                 <h2>Previzualizare Ghid Lectură</h2>
-                <embed src="https://manualedigitaleart.ro/docs/clasa_V/romana/ghid-romana-clasa-5.pdf"
-                    type="application/pdf" style="width: 200px; height: 300px;">
+                <embed src="https://manualedigitaleart.ro/docs/clasa_V/romana/ghid-romana-clasa-5.pdf#view=Fit"
+                    type="application/pdf" title="Previzualizare Ghid StackReader">
             </section>
 
             <section id="evenimente-video">
+                <!--cerinta 14: sectiune de evenimente video, iframe-->
                 <h2>Lansări și Recomandări</h2>
                 <div class="container-iframe">
                     <div class="taburi-iframe">
@@ -467,6 +482,7 @@
 
             <section id="servicii-clienti">
                 <h3>Servicii și Loialitate</h3>
+                <!--cerinta 9: folosire dl-->
                 <dl>
                     <dt>Programe de Loialitate</dt>
                     <dd>Abonament și puncte bonus.</dd>
@@ -478,7 +494,11 @@
         </section>
     </main>
 
+    <!--cerinta 18: footer:
+    telefon fictiv, adresa, email fictiv, whatsapp-->
+    <!--cerinta 19: copyright-->
     <footer id="subsol">
+        <!--cerinta 13: inceputul paginii-->
         <a href="#" id="link-top" title="Înapoi sus">
             <div id="cerc-sageata">
                 <span id="sageata">&#8593;</span>
@@ -499,7 +519,7 @@
             <div id="harta-iframe">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2848.8450143891414!2d26.09886367664645!3d44.43635560155694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1ff4467f67755%3A0x6a05e3262078658a!2sFacultatea%20de%20Matematic%C4%83%20%C8%99i%20Informatic%C4%83!5e0!3m2!1sro!2sro!4v1700000000000!5m2!1sro!2sro"
-                    width="300" height="200" allowfullscreen="" loading="lazy" title="Locație sediu pe hartă"></iframe>
+                    allowfullscreen="" loading="lazy" title="Locație sediu pe hartă"></iframe>
             </div>
         </section>
 
@@ -521,3 +541,8 @@
 </body>
 
 </html>
+
+<!--bonus 1 : mathML-->
+<!--bonus 2: pdf embedded-->
+<!--bonus 4: locatie google maps-->
+<!--bonus 5: iframe cu video-uri de pe youtube-->

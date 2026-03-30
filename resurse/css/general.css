@@ -5,6 +5,7 @@
     font-style: normal;
 }
 
+/*cerinta 4: icon uri + font*/
 header h1, blockquote p, #zona-1 h3, .animated-icon-box {
     font-family: 'Indie Flower', cursive !important;
 }
@@ -17,6 +18,7 @@ header h1, blockquote p, #zona-1 h3, .animated-icon-box {
     color: var(--color-accent);
 }
 
+/*cerinta 1: schema cromatica*/
 :root {
     --color-base: #1C1D21; 
     --color-secondary: #3D2226; 
@@ -27,10 +29,11 @@ header h1, blockquote p, #zona-1 h3, .animated-icon-box {
     --bg-pagina: var(--color-base);
     --text-main: var(--color-text-on-dark);
     --border-standard: 1px solid var(--color-border);
-    
+    /*cerinta 3. a: spatiere margini*/
     --pag-margin: 10px;
+    /*cerinta 3. b: spatiere intre celule*/
     --grid-gap: 15px;
-    --content-padding: 20px;
+    --content-padding: 20px; /*cerinta 3. d: padding*/
 }
 
 @media screen and (min-width: 700px) {
@@ -61,6 +64,8 @@ p, td, li, address, small, figcaption, code, details, dl {
     font-family: 'Roboto', sans-serif;
 }
 
+/*cerinta 3. c: header*/
+
 header {
     background-color: var(--color-secondary);
     padding: var(--content-padding);
@@ -76,6 +81,7 @@ header h1 {
     font-size: 2.8rem;
 }
 
+
 #main-grid {
     display: grid;
     gap: var(--grid-gap);
@@ -83,6 +89,8 @@ header h1 {
     grid-template-areas: 
         "z1" "z5" "z6" "z7" "z3" "z4" "z2" "z8";
 }
+
+/*cerinta 2: layout*/
 
 @media screen and (min-width: 700px) and (max-width: 999px) {
     #main-grid {
@@ -118,6 +126,7 @@ header h1 {
 #zona-7 { grid-area: z7; }
 #zona-8 { grid-area: z8; }
 
+/*cerina 3 c: grif*/
 #main-grid > section {
     background-color: rgba(61, 34, 38, 0.4);
     border: var(--border-standard);
@@ -146,6 +155,7 @@ header h1 {
     overflow-x: auto;
 }
 
+/*cerinta 5: stilizare tabel*/
 table {
     width: 100%;
     border-collapse: collapse;
@@ -163,6 +173,7 @@ th {
     color: var(--color-accent);
 }
 
+/*cerinta 3. e*/
 img, video, iframe, embed {
     width: 100%;
     max-width: 100%;
@@ -173,6 +184,7 @@ img, video, iframe, embed {
     margin: 15px auto;
 }
 
+/*cerinta 3. c: footer*/
 footer {
     background-color: #141518;
     margin-top: var(--grid-gap);
@@ -251,16 +263,20 @@ meter {
     background-color: #ecf0f1;
     color: #333 !important; 
 }
+
+/*cerinta 6: stilizare tab-uri iframe*/
 .container-iframe {
     display: flex;
     flex-direction: column-reverse; 
     width: 100%;
     max-width: 600px; 
-    margin: 20px 0;
+    margin: 20px auto; 
+    align-items: center; 
 }
 
 .container-iframe iframe {
-    width: 100%;
+    width: 500px;
+    height: 300px;
     border: 5px solid #4e7d54;
     border-radius: 5px;
     background-color: white;
@@ -268,9 +284,10 @@ meter {
 
 .taburi-iframe {
     display: flex;
-    justify-content: flex-start; 
+    justify-content: center; 
     gap: 10px; 
     margin-top: -5px;
+    width: 100%;
 }
 
 .taburi-iframe a {
@@ -305,6 +322,8 @@ meter {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
+
+/*cerinta 6: link top*/
 
 #link-top {
     position: fixed;
@@ -573,54 +592,62 @@ meter {
 }
 
 .img-recomandare:hover {
-    transform: scale(1.05); /* Efect de mărire la hover */
+    transform: scale(1.05); 
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
 
-/* Containerul extern - îl folosim doar pentru centrare și fundal */
 math[display="block"] {
     margin: 30px auto;
     padding: 25px;
-    background-color: rgba(61, 34, 38, 0.3); /* Un maro închis transparent */
+    background-color: rgba(61, 34, 38, 0.3); 
     border: 1px solid var(--color-accent);
     border-radius: 12px;
     width: fit-content;
-    font-size: 1.6rem; /* Mărim textul global */
+    font-size: 1.6rem; 
 }
 
-/* Stil pentru variabilele principale (P) */
 math mi {
     color: var(--color-accent) !important;
     font-family: 'Playfair Display', serif;
     padding: 0 2px;
 }
 
-/* Stil pentru indici (final, initial) - Rezolvă suprapunerea */
 math mtext {
-    font-size: 0.65em; /* Scalare relativă, nu fixă */
+    font-size: 0.65em;
     color: #d1d1d1;
     font-style: italic;
     font-family: 'Roboto', sans-serif;
 }
 
-/* Stil pentru operatori (=, -, x) - Adăugăm spațiu lateral */
 math mo {
     color: #ff8e8e !important;
-    padding: 0 10px !important; /* Oferă spațiu să nu se lipească */
+    padding: 0 10px !important; 
 }
 
-/* Stil pentru numere (15, 100) */
 math mn {
     color: #74f9ff !important;
     font-weight: bold;
 }
 
-/* Fractia - adăugăm puțină distanță față de restul formulei */
 math mfrac {
     padding: 0 5px;
 }
 
-/* SUB-SCRIPTS (Sub-indicii) - Ne asigurăm că nu se suprapun */
 math msub {
     padding-right: 5px;
 }
+#grid-galerie img {
+    width: 200px;
+    height: 300px;
+}
+
+#vizualizare-pdf embed {
+    width: 400px;      
+    max-width: 500px;  
+    height: 500px;     
+    border: 1px solid #ccc; 
+    display: block;   
+    margin: 20px auto;
+}
+
+/*bonus 2: stilizare mathML*/

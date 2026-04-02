@@ -22,6 +22,7 @@
     <meta name="apple-mobile-web-app-title" content="MyWebSite" />
     <link rel="manifest" href="./resurse/ico/favicon/site.webmanifest" />
     <link rel="stylesheet" href="./resurse/css/general.css" />
+
     <script src="https://kit.fontawesome.com/6f092a9687.js" crossorigin="anonymous"></script>
     <title>StackReader - Librăria Ta Digitală</title>
 </head>
@@ -34,12 +35,13 @@
             <hgroup>
                 <h1 id="t">StackReader</h1>
                 <!--cerinta 9 : folosire p-->
-                <p>Lumea cărților la picioarele tale</p>
+                <p><i>Lumea cărților la picioarele tale</i></p>
             </hgroup>
         </section>
         <!--cerinta 8: folosire nav-->
         <nav>
             <section>
+                <input type="checkbox" id="ch-menu" style="display: none;" />
                 <label id="hamburger" for="ch-menu">
                     <span class="linie-hamburger"></span>
                     <span class="linie-hamburger"></span>
@@ -50,7 +52,9 @@
             <input type="checkbox" id="ch-menu" />
             <ul class="meniu">
                 <li>
-                    <a href="index.html">Acasă</a>
+                    <a href="index.html">
+                        <i class="fa-solid fa-house"></i> <span class="text-meniu">Acasă</span>
+                    </a>
                     <ul>
                         <li><a href="index.html#recomandare-editor">Noutăți & Bestsellers</a></li>
                         <li><a href="index.html#promotii">Promoții</a></li>
@@ -62,9 +66,25 @@
                         <li><a href="index.html#faq-si-detalii">Intrebari frecvente</a> </li>
                     </ul>
                 </li>
-                <li><a href="produse.html">Produse</a></li>
-                <li><a href="despre.html">Despre noi</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li>
+                    <a href="produse.html">
+                        <i class="fa-solid fa-book-open"></i> <span class="text-meniu">Produse</span>
+                    </a>
+                    <ul>
+                        <li><a href="galerie-statica.html">Galerie Statică</a></li>
+                        <li><a href="galerie-dinamica.html">Galerie Dinamică</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="despre.html">
+                        <i class="fa-solid fa-circle-info"></i> <span class="text-meniu">Despre noi</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="contact.html">
+                        <i class="fa-solid fa-envelope"></i> <span class="text-meniu">Contact</span>
+                    </a>
+                </li>
             </ul>
         </nav>
     </header>
@@ -230,16 +250,17 @@
                     <h2>Recomandarea Săptămânii</h2>
                     <!--cerinta 11 - figure și figcaption-->
                     <figure>
-                        <picture>
-                            <source srcset="./resurse/imagini/the_long_walk.png" media="(min-width: 1024px)">
-                            <source srcset="./resurse/imagini/the_long_walk.png" media="(min-width: 600px)">
-                            <img src="./resurse/imagini/the_long_walk.png" alt="Coperta unei cărți recomandate"
-                                title="Apasă pentru detalii despre autor și recenzii" class="img-recomandare">
-                        </picture>
-                        <figcaption>
-                            <strong>"The Long Walk"</strong>-<i>Stephen King</i>
-                            - Un thriller distopic care explorează limitele rezistenței umane într-un joc mortal.
-                        </figcaption>
+                        <a href="https://www.goodreads.com/en/book/show/9014.The_Long_Walk">
+                            <picture>
+                                <source srcset="./resurse/imagini/the_long_walk.png" media="(min-width: 1024px)">
+                                <source srcset="./resurse/imagini/the_long_walk.png" media="(min-width: 600px)">
+                                <img src="./resurse/imagini/the_long_walk.png" alt="Coperta unei cărți recomandate"
+                                    title="Apasă pentru detalii despre autor și recenzii" class="img-recomandare">
+                            </picture>
+                            <figcaption>
+                                <strong>"The Long Walk"</strong>-<i>Stephen King</i>
+                                - Un thriller distopic care explorează limitele rezistenței umane într-un joc mortal.
+                            </figcaption>
                     </figure>
                     <!--cerinta 6: article-->
                     <article>
@@ -286,7 +307,7 @@
                                 <mtext>inițial</mtext>
                             </msub>
                             <mo>-</mo>
-                            <mfenced>
+                            <mrow>
                                 <mrow>
                                     <msub>
                                         <mi>P</mi>
@@ -298,7 +319,7 @@
                                         <mn>100</mn>
                                     </mfrac>
                                 </mrow>
-                            </mfenced>
+                            </mrow>
                         </math>
                     </article>
 
@@ -518,9 +539,10 @@
 
             <div id="harta-iframe">
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2848.8450143891414!2d26.09886367664645!3d44.43635560155694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1ff4467f67755%3A0x6a05e3262078658a!2sFacultatea%20de%20Matematic%C4%83%20%C8%99i%20Informatic%C4%83!5e0!3m2!1sro!2sro!4v1700000000000!5m2!1sro!2sro"
-                    allowfullscreen="" loading="lazy" title="Locație sediu pe hartă"></iframe>
-            </div>
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2848.884114398441!2d26.09701177573258!3d44.435539301482414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1ff472f47f047%3A0x493984726f0235f9!2sFaculty%20of%20Mathematics%20and%20Computer%20Science!5e0!3m2!1sen!2sro!4v1774856847070!5m2!1sen!2sro"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>2
         </section>
 
         <section id="footer-links">

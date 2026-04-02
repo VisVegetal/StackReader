@@ -5,7 +5,6 @@
     font-style: normal;
 }
 
-/*cerinta 4: icon uri + font*/
 header h1, blockquote p, #zona-1 h3, .animated-icon-box {
     font-family: 'Indie Flower', cursive !important;
 }
@@ -18,7 +17,6 @@ header h1, blockquote p, #zona-1 h3, .animated-icon-box {
     color: var(--color-accent);
 }
 
-/*cerinta 1: schema cromatica*/
 :root {
     --color-base: #1C1D21; 
     --color-secondary: #3D2226; 
@@ -29,11 +27,9 @@ header h1, blockquote p, #zona-1 h3, .animated-icon-box {
     --bg-pagina: var(--color-base);
     --text-main: var(--color-text-on-dark);
     --border-standard: 1px solid var(--color-border);
-    /*cerinta 3. a: spatiere margini*/
     --pag-margin: 10px;
-    /*cerinta 3. b: spatiere intre celule*/
     --grid-gap: 15px;
-    --content-padding: 20px; /*cerinta 3. d: padding*/
+    --content-padding: 20px;
 }
 
 @media screen and (min-width: 700px) {
@@ -64,8 +60,6 @@ p, td, li, address, small, figcaption, code, details, dl {
     font-family: 'Roboto', sans-serif;
 }
 
-/*cerinta 3. c: header*/
-
 header {
     background-color: var(--color-secondary);
     padding: var(--content-padding);
@@ -81,7 +75,6 @@ header h1 {
     font-size: 2.8rem;
 }
 
-
 #main-grid {
     display: grid;
     gap: var(--grid-gap);
@@ -89,8 +82,6 @@ header h1 {
     grid-template-areas: 
         "z1" "z5" "z6" "z7" "z3" "z4" "z2" "z8";
 }
-
-/*cerinta 2: layout*/
 
 @media screen and (min-width: 700px) and (max-width: 999px) {
     #main-grid {
@@ -126,7 +117,6 @@ header h1 {
 #zona-7 { grid-area: z7; }
 #zona-8 { grid-area: z8; }
 
-/*cerina 3 c: grif*/
 #main-grid > section {
     background-color: rgba(61, 34, 38, 0.4);
     border: var(--border-standard);
@@ -155,7 +145,6 @@ header h1 {
     overflow-x: auto;
 }
 
-/*cerinta 5: stilizare tabel*/
 table {
     width: 100%;
     border-collapse: collapse;
@@ -173,7 +162,6 @@ th {
     color: var(--color-accent);
 }
 
-/*cerinta 3. e*/
 img, video, iframe, embed {
     width: 100%;
     max-width: 100%;
@@ -184,7 +172,6 @@ img, video, iframe, embed {
     margin: 15px auto;
 }
 
-/*cerinta 3. c: footer*/
 footer {
     background-color: #141518;
     margin-top: var(--grid-gap);
@@ -255,8 +242,8 @@ meter {
 
 #tab-orar tr:hover td {
     background-color: #f1c40f;
-    color: #000;             
-    border-width: 5px;  
+    color: #000;             
+    border-width: 5px;  
 }
 
 #tab-orar th {
@@ -264,7 +251,6 @@ meter {
     color: #333 !important; 
 }
 
-/*cerinta 6: stilizare tab-uri iframe*/
 .container-iframe {
     display: flex;
     flex-direction: column-reverse; 
@@ -322,8 +308,6 @@ meter {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
-
-/*cerinta 6: link top*/
 
 #link-top {
     position: fixed;
@@ -403,93 +387,129 @@ meter {
     to { transform: rotate(-360deg); }
 }
 
-/* Stiluri de bază pentru meniul principal */
+nav {
+    position: relative;
+    width: 100%;
+}
+#hamburger {
+    display: none; 
+}
 .meniu {
+    display: flex;
     list-style: none;
-    display: flex; /* Aliniere orizontală */
     padding: 0;
     margin: 20px 0 0 0;
     background-color: rgba(0, 0, 0, 0.2);
     border-radius: 8px;
+
+    li {
+        position: relative;
+
+        a {
+            display: flex;
+            align-items: center;
+            padding: 15px 25px;
+            color: var(--color-text-on-dark);
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: font-size 0.5s ease-in-out;
+            text-decoration: none;
+
+            &:hover {
+                font-size: 1.2rem;
+                color: var(--color-accent);
+            }
+        }
+
+        ul {
+            position: absolute;
+            left: 0;
+            top: 100%;
+            background-color: var(--color-secondary);
+            min-width: 220px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            border: 1px solid var(--color-accent);
+            border-radius: 0 0 8px 8px;
+            z-index: 100;
+            
+            transform: scaleY(0);
+            transform-origin: top; 
+            transition: transform 0.5s ease-in-out, opacity 0.5s ease;
+            opacity: 0;
+            display: block;
+        }
+
+        &:hover > ul {
+            transform: scaleY(1);
+            opacity: 1;
+        }
+
+        ul li a {
+            text-transform: none;
+            font-size: 0.85rem;
+            padding: 12px 20px;
+
+            &::before, &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                width: 4px;
+                height: 0;
+                background: linear-gradient(to bottom, white, black);
+                transition: height 0.3s linear;
+            }
+            &::before { left: 0; }
+            &::after { right: 0; }
+
+            &:hover::before, &:hover::after {
+                height: 100%;
+            }
+        }
+    }
 }
 
-.meniu > li {
-    position: relative; /* Esențial pentru poziționarea sub-meniului */
-}
-
-.meniu a {
-    display: block;
-    padding: 15px 25px;
-    color: var(--color-text-on-dark);
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-}
-
-/* Stiluri pentru Sub-meniu (cel ascuns) */
-.meniu li ul {
-    position: absolute;
-    left: 0;
-    top: 100%; /* Apare exact sub părinte */
-    background-color: var(--color-secondary);
-    min-width: 220px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    border: 1px solid var(--color-accent);
-    border-radius: 0 0 8px 8px;
-    box-shadow: 0 8px 15px rgba(0,0,0,0.5);
-    
-    /* Starea inițială: Ascuns */
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: all 0.3s ease;
-    z-index: 100;
-}
-
-.meniu li ul li {
-    border-bottom: 1px solid rgba(199, 155, 109, 0.2);
-}
-
-.meniu li ul li a {
-    padding: 12px 20px;
-    text-transform: none; /* Sub-meniul să nu fie tot cu majuscule */
-    font-size: 0.85rem;
-}
-
-/* EFECTUL DE HOVER - Aici se întâmplă magia */
-.meniu li:hover > ul {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-.meniu li a:hover {
-    background-color: var(--color-accent);
-    color: var(--color-base) !important;
-}
-
-#ch-menu, #hamburger {
-    display: none; 
+@media screen and (min-width: 701px) and (max-width: 1000px) {
+    .text-meniu {
+        display: none;
+    }
+    .meniu a i {
+        font-size: 1.5rem; 
+    }
 }
 
 @media screen and (max-width: 700px) {
-    .meniu {
+    #hamburger {
+        display: flex;
         flex-direction: column;
-        display: none; 
+        justify-content: space-between;
+        width: 30px;
+        height: 20px;
+        cursor: pointer;
+        padding: 10px;
     }
+
+    .meniu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--color-secondary);
+    }
+
     #ch-menu:checked ~ .meniu {
         display: block;
     }
-    #hamburger {
-        display: flex;
-    }
+    
     .meniu li ul {
-        position: static; 
-        opacity: 1;
-        visibility: visible;
-        transform: none;
+        position: static;
+        transform: scaleX(0);
+        transform-origin: left;
+    }
+    
+    .meniu li:hover > ul {
+        transform: scaleX(1);
     }
 }
 
@@ -642,12 +662,112 @@ math msub {
 }
 
 #vizualizare-pdf embed {
-    width: 400px;      
-    max-width: 500px;  
-    height: 500px;     
+    width: 400px;      
+    max-width: 500px;  
+    height: 500px;     
     border: 1px solid #ccc; 
-    display: block;   
+    display: block;   
     margin: 20px auto;
 }
 
-/*bonus 2: stilizare mathML*/
+@media print {
+    #main-grid {
+        display: block !important;
+    }
+
+    img, video, iframe, embed, 
+    figcaption, .container-iframe, 
+    #container-video, #harta-iframe,
+    #link-top, #vizualizare-pdf,
+    .container-iconite, #triunghi {
+        display: none !important;
+    }
+
+    a {
+        text-decoration: none !important;
+        color: black !important;
+        font-weight: normal !important;
+    }
+
+    header h1 {
+        text-align: center !important;
+        color: black !important;
+        font-size: 30pt !important;
+    }
+
+    .meniu {
+        display: block !important;
+        background: none !important;
+        border: none !important;
+    }
+
+    .meniu > li {
+        display: list-item !important;
+        list-style-type: disc !important;
+        margin-left: 20pt !important;
+        color: black !important;
+    }
+
+    .meniu ul, #hamburger, #ch-menu, i { 
+        display: none !important;
+    }
+
+    nav {
+        page-break-after: always !important;
+    }
+
+    footer {
+        page-break-before: always !important;
+        background: none !important;
+        color: black !important;
+        border: none !important;
+    }
+
+    footer p.banner-proiect {
+        position: absolute;
+        bottom: 0;
+        left: 15%;
+        width: 70%;
+        text-align: center;
+        border: 4px inset black;
+        padding: 10px;
+        color: black !important;
+    }
+
+    body::after {
+        content: "Niculae\a Maria-Alexandra";
+        white-space: pre;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: 4cm;
+        height: 1cm;
+        border: 3px solid black;
+        border-radius: 10px;
+        text-align: center;
+        font-weight: bold;
+        opacity: 0.4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        color: black !important;
+    }
+
+    @page :left {
+        margin-left: 3cm;
+        margin-right: 1cm;
+    }
+
+    @page :right {
+        margin-right: 3cm;
+        margin-left: 1cm;
+    }
+
+    body, header, #main-grid > section {
+        background: white !important;
+        color: black !important;
+        box-shadow: none !important;
+        border: 1px solid #ccc !important;
+    }
+}

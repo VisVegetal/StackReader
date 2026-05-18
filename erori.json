@@ -1,0 +1,38 @@
+{
+    "cale_baza": "/resurse/imagini/erori/",
+    "eroare_default": {
+        "titlu": "Eroare - StackReader",
+        "text": "A apărut o eroare neașteptată. Vă rugăm să încercați din nou mai târziu.",
+        "imagine": "default.svg"
+    },
+    "info_erori": [
+        {
+            "identificator": 400,
+            "status": true,
+            "titlu": "Bad Request",
+            "text": "Cererea nu poate fi procesată. Accesul direct la fișiere EJS nu este permis.",
+            "imagine": "400.svg"
+        },
+        {
+            "identificator": 403,
+            "status": true,
+            "titlu": "Acces Interzis",
+            "text": "Nu aveți permisiunea de a accesa această resursă.",
+            "imagine": "403.svg"
+        },
+        {
+            "identificator": 404,
+            "status": true,
+            "titlu": "Pagina nu a fost găsită",
+            "text": "Pagina pe care o căutați nu există sau a fost mutată.",
+            "imagine": "404.svg"
+        },
+        {
+            "identificator": 500,
+            "status": true,
+            "titlu": "Eroare Internă de Server",
+            "text": "A apărut o eroare internă. Vă rugăm să încercați din nou mai târziu.",
+            "imagine": "500.svg"
+        }
+    ]
+}

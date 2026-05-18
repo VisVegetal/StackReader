@@ -22,12 +22,17 @@
     <meta name="apple-mobile-web-app-title" content="MyWebSite" />
     <link rel="manifest" href="./resurse/ico/favicon/site.webmanifest" />
     <link rel="stylesheet" href="./resurse/css/general.css" />
+    <link rel="stylesheet" href="./resurse/css/meniu.css" />
+    <link rel="stylesheet" href="./resurse/css/printare.css" />
 
     <script src="https://kit.fontawesome.com/6f092a9687.js" crossorigin="anonymous"></script>
     <title>StackReader - Librăria Ta Digitală</title>
 </head>
 
 <body>
+    <div id="watermark-print">
+        Niculae<br>Maria-Alexandra
+    </div>
     <header>
         <!--cerinta 6: section-->
         <section id="titlu">
@@ -40,16 +45,15 @@
         </section>
         <!--cerinta 8: folosire nav-->
         <nav>
-            <section>
-                <input type="checkbox" id="ch-menu" style="display: none;" />
+            <div>
                 <label id="hamburger" for="ch-menu">
                     <span class="linie-hamburger"></span>
                     <span class="linie-hamburger"></span>
                     <span class="linie-hamburger"></span>
                 </label>
-            </section>
+            </div>
 
-            <input type="checkbox" id="ch-menu" />
+            <input type="checkbox" id="ch-menu">
             <ul class="meniu">
                 <li>
                     <a href="index.html">
@@ -115,7 +119,7 @@
         </section>
 
         <section id="zona-5">
-            <h3>Cititori Activi</h3>
+            <h2>Cititori Activi</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. În acest moment, comunitatea noastră numără
                 peste 150 de utilizatori online care explorează rafturile digitale.</p>
         </section>
@@ -177,7 +181,9 @@
                 <!--cerinta 15 : table-->
                 <h2>Program de Funcționare și Suport</h2>
                 <table id="tab-orar">
-                    <caption>Programul de lucru al sediului StackReader</caption>
+                    <caption>
+                        <div id="triunghi"></div>Programul de lucru al sediului StackReader
+                    </caption>
                     <thead>
                         <tr>
                             <th>Categorie Zile</th>
@@ -257,10 +263,11 @@
                                 <img src="./resurse/imagini/the_long_walk.png" alt="Coperta unei cărți recomandate"
                                     title="Apasă pentru detalii despre autor și recenzii" class="img-recomandare">
                             </picture>
-                            <figcaption>
-                                <strong>"The Long Walk"</strong>-<i>Stephen King</i>
-                                - Un thriller distopic care explorează limitele rezistenței umane într-un joc mortal.
-                            </figcaption>
+                        </a>
+                        <figcaption>
+                            <strong>"The Long Walk"</strong>-<i>Stephen King</i>
+                            - Un thriller distopic care explorează limitele rezistenței umane într-un joc mortal.
+                        </figcaption>
                     </figure>
                     <!--cerinta 6: article-->
                     <article>
@@ -511,7 +518,6 @@
                     <dd>Call Center și Garanție Retur.</dd>
                 </dl>
             </section>
-            </div>
         </section>
     </main>
 
@@ -555,7 +561,7 @@
                 </ul>
             </nav>
         </section>
-
+        <p class="banner-proiect">Acesta este un proiect școlar!</p>
         <small>© <time datetime="2026-03-19">19 martie 2026</time> StackReader - Realizat de Niculae
             Maria-Alexandra</small>
     </footer>

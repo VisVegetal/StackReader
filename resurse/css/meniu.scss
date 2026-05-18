@@ -1,0 +1,271 @@
+// SASS variables
+$menu-trans-speed: 0.5s;
+$bar-trans-speed: 0.3s;
+$font-size-base: 0.9rem;
+$font-size-hover: 1.2rem;
+$font-size-submenu: 0.85rem;
+$font-size-icon-medium: 1.5rem;
+$break-mobile: 700px;
+$break-tablet: 701px;
+$break-desktop: 1000px;
+
+// Placeholder for base link styles
+%link-base {
+    display: flex;
+    align-items: center;
+    padding: 15px 25px;
+    color: var(--color-text-on-dark);
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: font-size $menu-trans-speed ease-in-out;
+}
+
+// Placeholder for pseudo-element bars
+%pseudo-bar {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 4px;
+    height: 0;
+    background: linear-gradient(to bottom, var(--bar-start), var(--bar-end));
+    transition: height $bar-trans-speed linear;
+}
+
+// Hide the checkbox used for hamburger toggle
+#ch-menu {
+    display: none;
+}
+
+// CSS variables in body for theme
+body {
+    --menu-bg: rgba(0, 0, 0, 0.2);
+    --submenu-bg: var(--color-secondary);
+    --submenu-border: var(--color-accent);
+    --bar-start: #ffffff;
+    --bar-end: #000000;
+    --hamburger-color: var(--color-accent);
+    --hamburger-hover: var(--color-text-on-dark);
+}
+
+// ---------- NAV ----------
+nav {
+    position: relative;
+    width: 100%;
+}
+
+// Hamburger button — 3 spans absolutely positioned inside container
+#hamburger {
+    display: none;
+    position: relative;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    margin: 10px;
+    padding: 0;
+
+    .linie-hamburger {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background-color: var(--hamburger-color);
+        border-radius: 2px;
+        transition: all 0.3s ease;
+
+        @for $i from 1 through 3 {
+            &:nth-child(#{$i}) {
+                top: #{2 + ($i - 1) * 7}px;
+            }
+        }
+    }
+
+    &:hover .linie-hamburger {
+        background-color: var(--hamburger-hover);
+    }
+}
+
+// Animation for hamburger appearance on mobile
+@keyframes hamburgerAppear {
+    0% {
+        opacity: 0;
+        transform: rotate(0deg) scale(0.3);
+        background-color: transparent;
+    }
+    50% {
+        opacity: 0.6;
+        transform: rotate(180deg) scale(0.7);
+        background-color: var(--color-accent);
+    }
+    100% {
+        opacity: 1;
+        transform: rotate(360deg) scale(1);
+        background-color: var(--hamburger-color);
+    }
+}
+
+// Main menu list
+ul.meniu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0 0;
+    background-color: var(--menu-bg);
+    border-radius: 8px;
+
+    > li {
+        position: relative;
+
+        // Main menu links
+        > a {
+            @extend %link-base;
+            font-size: $font-size-base;
+
+            i {
+                margin-right: 8px;
+            }
+
+            &:hover {
+                font-size: $font-size-hover;
+                color: var(--color-accent);
+            }
+        }
+
+        // Submenu
+        > ul {
+            position: absolute;
+            left: 0;
+            top: 100%;
+            background-color: var(--submenu-bg);
+            min-width: 220px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            border: 1px solid var(--submenu-border);
+            border-radius: 0 0 8px 8px;
+            z-index: 100;
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: transform $menu-trans-speed ease-in-out, opacity $menu-trans-speed ease;
+            opacity: 0;
+            display: block;
+
+            li {
+                position: relative;
+
+                a {
+                    @extend %link-base;
+                    text-transform: none;
+                    font-size: $font-size-submenu;
+                    padding: 12px 20px;
+
+                    &::before {
+                        @extend %pseudo-bar;
+                        left: 0;
+                    }
+
+                    &::after {
+                        @extend %pseudo-bar;
+                        right: 0;
+                    }
+
+                    &:hover::before,
+                    &:hover::after {
+                        height: 100%;
+                    }
+                }
+
+                // Staggered transition delay for submenu items appearing
+                @for $i from 1 through 8 {
+                    &:nth-child(#{$i}) a {
+                        transition-delay: #{($i - 1) * 0.05}s;
+                    }
+                }
+            }
+        }
+
+        // Show submenu on hover
+        &:hover > ul {
+            transform: scaleY(1);
+            opacity: 1;
+        }
+    }
+}
+
+// Active / current page indicator (optional)
+// ul.meniu > li:has(a[href*="index.html"]) > a {
+//     color: var(--color-accent);
+// }
+
+// ---------- MEDIUM SCREEN ----------
+@media screen and (min-width: $break-tablet) and (max-width: 999px) {
+    ul.meniu {
+        > li > a {
+            font-size: 0.75rem;
+        }
+
+        a i {
+            font-size: $font-size-icon-medium;
+        }
+    }
+
+    .text-meniu {
+        display: none;
+    }
+}
+
+// ---------- SMALL SCREEN (MOBILE) ----------
+@media screen and (max-width: $break-mobile) {
+    #hamburger {
+        display: block;
+
+        .linie-hamburger {
+            animation: hamburgerAppear 0.8s ease-in-out forwards;
+
+            @for $i from 1 through 3 {
+                &:nth-child(#{$i}) {
+                    animation-delay: #{($i - 1) * 0.15}s;
+                }
+            }
+        }
+    }
+
+    ul.meniu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--color-secondary);
+
+        > li {
+            width: 100%;
+
+            > a {
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            > ul {
+                position: static;
+                transform: scaleX(0);
+                transform-origin: left;
+                opacity: 1;
+                border: none;
+                border-radius: 0;
+                background-color: rgba(0, 0, 0, 0.15);
+
+                li a {
+                    padding-left: 40px;
+                }
+            }
+
+            &:hover > ul {
+                transform: scaleX(1);
+            }
+        }
+    }
+
+    // Show menu when hamburger is checked
+    #ch-menu:checked ~ ul.meniu {
+        display: block;
+    }
+}

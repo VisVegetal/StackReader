@@ -1,26 +1,36 @@
+/*importare fonturi*/
 @font-face {
     font-family: 'Indie Flower';
     src: url('../fonts/IndieFlower-Regular.ttf') format('truetype');
     font-weight: normal;
-    font-style: normal;
+    font-style: normal; 
 }
 
-header h1, blockquote p, #zona-1 h3, .animated-icon-box {
+/*regula de selectie multipla pe elemente*/
+header h1,
+blockquote p,
+#zona-1 h3,
+.animated-icon-box {
     font-family: 'Indie Flower', cursive !important;
+    /*prioritizarea acestei comenzi in fata oricarei alteia*/
 }
 
+/*iconitele din zona 1*/
 .container-iconite {
     display: flex;
+    /*alinierea iconitelor pe aceeasi axa, chiar daca dimensiunea lor variaza*/
     gap: 20px;
     font-size: 2rem;
+    /*de 2 ori mai mare decat textul default din root*/
     margin-bottom: 15px;
     color: var(--color-accent);
 }
 
+/*cerinta 1: schema cromatica */
 :root {
-    --color-base: #1C1D21; 
-    --color-secondary: #3D2226; 
-    --color-accent: #C79B6D; 
+    --color-base: #1C1D21;
+    --color-secondary: #3D2226;
+    --color-accent: #C79B6D;
     --color-text-on-dark: #F4EAE0;
     --color-border: #5A5C61;
 
@@ -32,6 +42,7 @@ header h1, blockquote p, #zona-1 h3, .animated-icon-box {
     --content-padding: 20px;
 }
 
+/*dimensiuni ecran mediu*/
 @media screen and (min-width: 700px) {
     :root {
         --pag-margin: 40px;
@@ -39,6 +50,7 @@ header h1, blockquote p, #zona-1 h3, .animated-icon-box {
     }
 }
 
+/*dimensiuni ecran mare*/
 @media screen and (min-width: 1000px) {
     :root {
         --pag-margin: 100px;
@@ -46,17 +58,29 @@ header h1, blockquote p, #zona-1 h3, .animated-icon-box {
     }
 }
 
+/*setari generale pt body*/
 body {
     background-color: var(--bg-pagina);
     color: var(--text-main);
     margin: 0;
     padding: 0 var(--pag-margin);
+    /*padding-ul de sus si jos e 0, iar cel de la stanga si dreapta e var(--pag-margin)*/
     font-family: 'Playfair Display', serif;
+    /*daca browserul nu gaseste fontul, foloseste orice font serif*/
     line-height: 1.6;
     box-sizing: border-box;
+    /*indiferent de padding, cutia sa ramana la dimensiunea prestabilita*/
 }
 
-p, td, li, address, small, figcaption, code, details, dl {
+p,
+td,
+li,
+address,
+small,
+figcaption,
+code,
+details,
+dl {
     font-family: 'Roboto', sans-serif;
 }
 
@@ -65,7 +89,9 @@ header {
     padding: var(--content-padding);
     border: 2px solid var(--color-accent);
     border-radius: 0 0 15px 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.6);
+    /*rotunjirea colturilor, in cazul asta, doar cele de jos*/
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);
+    /*0 horizontal offset, 5px vertical offset, 20px blur radius, 0.6 opacity */
     margin-bottom: var(--grid-gap);
 }
 
@@ -75,18 +101,23 @@ header h1 {
     font-size: 2.8rem;
 }
 
+/*cerinta 2: grid */
+
+/*ecran mic, cele mai restrictive dpdv css */
 #main-grid {
     display: grid;
+    /*vede main-grid ca pe o matrice*/
     gap: var(--grid-gap);
     grid-template-columns: 100%;
-    grid-template-areas: 
+    grid-template-areas:
         "z1" "z5" "z6" "z7" "z3" "z4" "z2" "z8";
 }
 
+/*ecran mediu*/
 @media screen and (min-width: 700px) and (max-width: 999px) {
     #main-grid {
         grid-template-columns: 1fr 1fr;
-        grid-template-areas: 
+        grid-template-areas:
             "z1 z1"
             "z5 z6"
             "z7 z3"
@@ -96,18 +127,20 @@ header h1 {
     }
 }
 
+/*ecran mare - desktop*/
 @media screen and (min-width: 1000px) {
     #main-grid {
-        grid-template-columns: 1fr 2fr 1fr;
-        grid-template-areas: 
-            "z1 z1 z1"
-            "z5 z6 z7"
-            "z3 z2 z2"
-            "z4 z2 z2"
-            "z8 z8 z8";
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+            "z1 z1 z1 z1"
+            "z5 z6 z6 z7"
+            "z3 z3 z2 z2"
+            "z4 z4 z2 z2"
+            "z8 z8 z8 z8";
     }
 }
 
+/*definirea zonelor*/
 #zona-1 { grid-area: z1; }
 #zona-2 { grid-area: z2; }
 #zona-3 { grid-area: z3; }
@@ -122,11 +155,19 @@ header h1 {
     border: var(--border-standard);
     border-radius: 10px;
     padding: var(--content-padding);
-    box-shadow: 3px 3px 15px rgba(0,0,0,0.4);
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.4);
 }
 
+/*Studiile arată că utilizatorii nu citesc tot textul
+pe o pagină web, ci își mișcă ochii în formă de litera F:
+citesc titlul (linie orizontală sus),
+apoi un pic mai jos (o linie orizontală mai scurtă)
+și apoi scanează rapid în jos pe verticală.*/
+
+/*F-pattern pt zona 1*/
 .f-pattern-content {
     display: flex;
+    /*ordinea si alinierea verticala*/
     flex-direction: column;
 }
 
@@ -141,6 +182,7 @@ header h1 {
     max-width: 75%;
 }
 
+/*evitarea de overflow, scrollbar orizontal*/
 #zona-2 {
     overflow-x: auto;
 }
@@ -148,10 +190,12 @@ header h1 {
 table {
     width: 100%;
     border-collapse: collapse;
+    /*uneste celulele*/
     margin: 15px 0;
 }
 
-th, td {
+th,
+td {
     padding: 12px;
     border: var(--border-standard);
     text-align: left;
@@ -162,13 +206,17 @@ th {
     color: var(--color-accent);
 }
 
-img, video, iframe, embed {
+img,
+video,
+iframe,
+embed {
     width: 100%;
     max-width: 100%;
     min-width: 180px;
     height: auto;
     border-radius: 5px;
     display: block;
+    /*se intinde pe intreaga latime a containerului*/
     margin: 15px auto;
 }
 
@@ -187,6 +235,7 @@ a {
     transition: 0.3s;
 }
 
+/*ce se intampla cand utilizatorul tine mouse-ul deasupra linkului*/
 a:hover {
     color: #fff;
     text-shadow: 0 0 5px var(--color-accent);
@@ -206,15 +255,16 @@ meter {
     margin: 5px auto;
 }
 
+/*stilizare tabel*/
 #orar-sediu {
     width: 100%;
-    overflow-x: auto; 
+    overflow-x: auto;
 }
 
 #tab-orar {
     width: 100%;
-    border-collapse: collapse; 
-    border: 6px double #2c3e50; 
+    border-collapse: collapse;
+    border: 6px double #2c3e50;
     margin-bottom: 20px;
 }
 
@@ -225,39 +275,44 @@ meter {
     color: #555;
 }
 
-#tab-orar td, #tab-orar th {
-    border: 1px solid #ccc; 
+#tab-orar td,
+#tab-orar th {
+    border: 1px solid #ccc;
     padding: 12px;
     text-align: center;
-    transition: all 1s ease; 
+    transition: all 0.75s ease;
 }
 
 #tab-orar td:nth-child(odd) {
-    color: #1a5276; 
+    color: #1a5276;
 }
 
 #tab-orar td:nth-child(even) {
-    color: #d35400; 
+    color: #d35400;
 }
 
 #tab-orar tr:hover td {
     background-color: #f1c40f;
-    color: #000;             
-    border-width: 5px;  
+    color: #000;
+    border-width: 5px;
 }
 
 #tab-orar th {
     background-color: #ecf0f1;
-    color: #333 !important; 
+    color: #333 !important;
 }
 
+/*stilizare iframe*/
 .container-iframe {
     display: flex;
-    flex-direction: column-reverse; 
+    /*usor de manipulat ca pozitie*/
+    flex-direction: column-reverse;
+    /*butoanele apar sub video, spre deosebire de ordinea din index*/
     width: 100%;
-    max-width: 600px; 
-    margin: 20px auto; 
-    align-items: center; 
+    max-width: 600px;
+    margin: 20px auto;
+    /*auto calculeaza marginile a.i sa fie pe mic*/
+    align-items: center;
 }
 
 .container-iframe iframe {
@@ -270,8 +325,8 @@ meter {
 
 .taburi-iframe {
     display: flex;
-    justify-content: center; 
-    gap: 10px; 
+    justify-content: center;
+    gap: 10px;
     margin-top: -5px;
     width: 100%;
 }
@@ -282,19 +337,17 @@ meter {
     justify-content: center;
     text-align: center;
     text-decoration: none;
-    
     width: 140px;
     height: 50px;
     padding: 5px;
     border: 2px solid #4e7d54;
-    border-top: none; 
-    border-radius: 0 0 15px 15px; 
-    
+    border-top: none;
+    border-radius: 0 0 15px 15px;
+    /*tranzitie liniara*/
     background: linear-gradient(to bottom, #ffffff, #d4e4d6);
     color: #2c3e50;
     font-size: 0.9em;
     font-weight: bold;
-    
     transition: all 0.3s ease;
 }
 
@@ -303,39 +356,43 @@ meter {
     color: white;
 }
 
+/*stilizare harta*/
 #harta-iframe iframe {
     border: 3px solid #ccc;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/*butonul de back to top*/
 #link-top {
     position: fixed;
+    /*nu se miscsa cand dai scroll*/
     bottom: 20px;
     right: 20px;
     text-decoration: none;
+    /*ca sa nu fie subliniat, fiind link*/
     opacity: 0.6;
     transition: opacity 0.5s ease;
     display: block;
     z-index: 1000;
+    /*ca sa fie mereu vizibil, deasupra oricarui alt element*/
 }
 
+/*transformarea unui patrat in cerc*/
 #cerc-sageata {
     width: 60px;
     height: 60px;
-    background-color: #f0f0f0; 
+    background-color: #f0f0f0;
     border-radius: 50%;
+    /*rotunjim colturile*/
     display: flex;
     align-items: center;
     justify-content: center;
-    
     border-top: 4px solid #2c3e50;
     border-bottom: 4px solid #2c3e50;
     border-left: 4px solid #bdc3c7;
     border-right: 4px solid #bdc3c7;
-    
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
-    
     transition: transform 0.6s ease-in-out;
 }
 
@@ -346,6 +403,7 @@ meter {
     transition: filter 0.5s ease;
 }
 
+/*eticheta care apare cand treci cu mouse-ul peste buton*/
 .tooltip-text {
     visibility: hidden;
     background-color: #333;
@@ -357,16 +415,17 @@ meter {
     bottom: 70px;
     right: 0;
     white-space: nowrap;
+    /*textul nu se intrerupe pe mai multe linii*/
     font-size: 12px;
     opacity: 0;
     transition: opacity 0.3s;
 }
 
-
 #link-top:hover {
-    opacity: 1; 
+    opacity: 1;
 }
 
+/*se roteste la 360*/
 #link-top:hover #cerc-sageata {
     transform: rotate(360deg);
 }
@@ -375,6 +434,7 @@ meter {
     filter: blur(0);
     display: inline-block;
     animation: keep-straight 0.6s ease-in-out;
+    /*sageata ramane dreapta cand se invarte cercul*/
 }
 
 #link-top:hover .tooltip-text {
@@ -382,104 +442,125 @@ meter {
     opacity: 1;
 }
 
+/*sageata ramane dreapta rotindu-se opus fata de cerc, creand efectul ca sta dreapta*/
 @keyframes keep-straight {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(-360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
 }
 
 nav {
     position: relative;
     width: 100%;
 }
+
 #hamburger {
-    display: none; 
+    display: none;
 }
+
+/*bara de navigare/meniul */
 .meniu {
     display: flex;
+    /*aliniere orizontala*/
     list-style: none;
     padding: 0;
     margin: 20px 0 0 0;
     background-color: rgba(0, 0, 0, 0.2);
     border-radius: 8px;
-
-    li {
-        position: relative;
-
-        a {
-            display: flex;
-            align-items: center;
-            padding: 15px 25px;
-            color: var(--color-text-on-dark);
-            font-weight: bold;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            transition: font-size 0.5s ease-in-out;
-            text-decoration: none;
-
-            &:hover {
-                font-size: 1.2rem;
-                color: var(--color-accent);
-            }
-        }
-
-        ul {
-            position: absolute;
-            left: 0;
-            top: 100%;
-            background-color: var(--color-secondary);
-            min-width: 220px;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            border: 1px solid var(--color-accent);
-            border-radius: 0 0 8px 8px;
-            z-index: 100;
-            
-            transform: scaleY(0);
-            transform-origin: top; 
-            transition: transform 0.5s ease-in-out, opacity 0.5s ease;
-            opacity: 0;
-            display: block;
-        }
-
-        &:hover > ul {
-            transform: scaleY(1);
-            opacity: 1;
-        }
-
-        ul li a {
-            text-transform: none;
-            font-size: 0.85rem;
-            padding: 12px 20px;
-
-            &::before, &::after {
-                content: "";
-                position: absolute;
-                top: 0;
-                width: 4px;
-                height: 0;
-                background: linear-gradient(to bottom, white, black);
-                transition: height 0.3s linear;
-            }
-            &::before { left: 0; }
-            &::after { right: 0; }
-
-            &:hover::before, &:hover::after {
-                height: 100%;
-            }
-        }
-    }
 }
 
+.meniu li {
+    position: relative;
+}
+
+.meniu li a {
+    display: flex;
+    align-items: center;
+    padding: 15px 25px;
+    /*zona de click e mai mare*/
+    color: var(--color-text-on-dark);
+    font-weight: bold;
+    text-transform: uppercase;
+    /*majuscule*/
+    font-size: 0.9rem;
+    transition: font-size 0.5s ease-in-out;
+    /*creste textul treptat*/
+    text-decoration: none;
+}
+
+.meniu li a:hover {
+    font-size: 1.2rem;
+    color: var(--color-accent);
+}
+
+.meniu li ul {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: var(--color-secondary);
+    min-width: 220px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid var(--color-accent);
+    border-radius: 0 0 8px 8px;
+    z-index: 100;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease;
+    opacity: 0;
+    display: block;
+}
+
+.meniu li:hover > ul {
+    transform: scaleY(1);
+    opacity: 1;
+}
+
+.meniu li ul li a {
+    text-transform: none;
+    font-size: 0.85rem;
+    padding: 12px 20px;
+}
+
+.meniu li ul li a::before,
+.meniu li ul li a::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 4px;
+    height: 0;
+    background: linear-gradient(to bottom, white, black);
+    transition: height 0.3s linear;
+}
+
+.meniu li ul li a::before {
+    left: 0;
+}
+
+.meniu li ul li a::after {
+    right: 0;
+}
+
+.meniu li ul li a:hover::before,
+.meniu li ul li a:hover::after {
+    height: 100%;
+}
+
+/*adaptarea pt ecran mediu*/
 @media screen and (min-width: 701px) and (max-width: 1000px) {
     .text-meniu {
         display: none;
     }
     .meniu a i {
-        font-size: 1.5rem; 
+        font-size: 1.5rem;
     }
 }
 
+/*adaptare pt ecrane mici*/
 @media screen and (max-width: 700px) {
     #hamburger {
         display: flex;
@@ -501,18 +582,19 @@ nav {
     #ch-menu:checked ~ .meniu {
         display: block;
     }
-    
+
     .meniu li ul {
         position: static;
         transform: scaleX(0);
         transform-origin: left;
     }
-    
+
     .meniu li:hover > ul {
         transform: scaleX(1);
     }
 }
 
+/*sectiunea de întrebări frecvente și detalii*/
 #faq-si-detalii {
     display: flex;
     flex-direction: column;
@@ -532,7 +614,7 @@ nav {
     padding: 15px 20px;
     cursor: pointer;
     font-weight: bold;
-    list-style: none; 
+    list-style: none;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -549,7 +631,7 @@ nav {
 #faq-si-detalii details[open] {
     background-color: rgba(61, 34, 38, 0.6);
     border-color: var(--color-accent);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 #faq-si-detalii details[open] summary::after {
@@ -569,10 +651,17 @@ nav {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-5px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
+/*construirea butonului hamburger*/
 #hamburger {
     display: flex;
     flex-direction: column;
@@ -587,43 +676,43 @@ nav {
     display: block;
     width: 100%;
     height: 3px;
-    background-color: var(--color-accent); 
-    border-radius: 2px; 
-    transition: all 0.3s ease; 
+    background-color: var(--color-accent);
+    border-radius: 2px;
+    transition: all 0.3s ease;
 }
 
 #hamburger:hover .linie-hamburger {
     background-color: var(--color-text-on-dark);
 }
 
+/*stilizare imagini recomandate*/
 .img-recomandare {
     width: 250px;
     height: auto;
     border-radius: 5px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
-    
-    display: block; 
+    display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 20px; 
-    margin-bottom: 20px; 
-
+    margin-top: 20px;
+    margin-bottom: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .img-recomandare:hover {
-    transform: scale(1.05); 
+    transform: scale(1.05);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
 
+/*bonus 2: mathml*/
 math[display="block"] {
     margin: 30px auto;
     padding: 25px;
-    background-color: rgba(61, 34, 38, 0.3); 
+    background-color: rgba(61, 34, 38, 0.3);
     border: 1px solid var(--color-accent);
     border-radius: 12px;
     width: fit-content;
-    font-size: 1.6rem; 
+    font-size: 1.6rem;
 }
 
 math mi {
@@ -641,7 +730,7 @@ math mtext {
 
 math mo {
     color: #ff8e8e !important;
-    padding: 0 10px !important; 
+    padding: 0 10px !important;
 }
 
 math mn {
@@ -656,118 +745,18 @@ math mfrac {
 math msub {
     padding-right: 5px;
 }
+
 #grid-galerie img {
     width: 200px;
     height: 300px;
 }
 
+/*stilizare vizualizare PDF*/
 #vizualizare-pdf embed {
-    width: 400px;      
-    max-width: 500px;  
-    height: 500px;     
-    border: 1px solid #ccc; 
-    display: block;   
+    width: 400px;
+    max-width: 500px;
+    height: 500px;
+    border: 1px solid #ccc;
+    display: block;
     margin: 20px auto;
-}
-
-@media print {
-    #main-grid {
-        display: block !important;
-    }
-
-    img, video, iframe, embed, 
-    figcaption, .container-iframe, 
-    #container-video, #harta-iframe,
-    #link-top, #vizualizare-pdf,
-    .container-iconite, #triunghi {
-        display: none !important;
-    }
-
-    a {
-        text-decoration: none !important;
-        color: black !important;
-        font-weight: normal !important;
-    }
-
-    header h1 {
-        text-align: center !important;
-        color: black !important;
-        font-size: 30pt !important;
-    }
-
-    .meniu {
-        display: block !important;
-        background: none !important;
-        border: none !important;
-    }
-
-    .meniu > li {
-        display: list-item !important;
-        list-style-type: disc !important;
-        margin-left: 20pt !important;
-        color: black !important;
-    }
-
-    .meniu ul, #hamburger, #ch-menu, i { 
-        display: none !important;
-    }
-
-    nav {
-        page-break-after: always !important;
-    }
-
-    footer {
-        page-break-before: always !important;
-        background: none !important;
-        color: black !important;
-        border: none !important;
-    }
-
-    footer p.banner-proiect {
-        position: absolute;
-        bottom: 0;
-        left: 15%;
-        width: 70%;
-        text-align: center;
-        border: 4px inset black;
-        padding: 10px;
-        color: black !important;
-    }
-
-    body::after {
-        content: "Niculae\a Maria-Alexandra";
-        white-space: pre;
-        position: fixed;
-        bottom: 0;
-        right: 0;
-        width: 4cm;
-        height: 1cm;
-        border: 3px solid black;
-        border-radius: 10px;
-        text-align: center;
-        font-weight: bold;
-        opacity: 0.4;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 9999;
-        color: black !important;
-    }
-
-    @page :left {
-        margin-left: 3cm;
-        margin-right: 1cm;
-    }
-
-    @page :right {
-        margin-right: 3cm;
-        margin-left: 1cm;
-    }
-
-    body, header, #main-grid > section {
-        background: white !important;
-        color: black !important;
-        box-shadow: none !important;
-        border: 1px solid #ccc !important;
-    }
 }

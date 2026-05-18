@@ -1,0 +1,34 @@
+{
+  "name": "stackreader",
+  "version": "1.0.0",
+  "description": "StackReader este o platforma moderna de e-commerce dedicata pasionatilor de lectura, oferind un portofoliu vast de carti si resurse digitale.",
+  "keywords": [
+    "stackreader",
+    "carti",
+    "ecommerce",
+    "librarie",
+    "proiect",
+    "html",
+    "css",
+    "online"
+  ],
+  "homepage": "https://github.com/VisVegetal/StackReader#readme",
+  "bugs": {
+    "url": "https://github.com/VisVegetal/StackReader/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VisVegetal/StackReader.git"
+  },
+  "license": "ISC",
+  "author": "Niculae Maria-Alexandra",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "ejs": "^5.0.2",
+    "express": "^5.2.1"
+  }
+}

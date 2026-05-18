@@ -1,0 +1,13 @@
+<%- include('../fragmente/head', { title: eroare.titlu }) %>
+<%- include('../fragmente/header') %>
+
+    <main>
+        <section style="text-align: center; padding: 4rem 2rem;">
+            <img src="<%= eroare.imagine %>" alt="<%= eroare.titlu %>" style="max-width: 200px;">
+            <h1><%= eroare.titlu %></h1>
+            <p><%= eroare.text %></p>
+            <p><a href="/">Înapoi la pagina principală</a></p>
+        </section>
+    </main>
+
+<%- include('../fragmente/footer') %>

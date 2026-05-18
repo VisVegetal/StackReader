@@ -1,0 +1,164 @@
+/* ---------- PRINT STYLES ---------- */
+
+@media print {
+    body {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+
+    /* Hide media elements and their containers */
+    img, video, iframe, embed, object, canvas, svg,
+    picture, figure, figcaption,
+    #link-top, #cerc-sageata, #sageata, .tooltip-text,
+    #container-video, #centrare-video, #clip-video, #stil-video,
+    .container-iframe, .taburi-iframe,
+    #harta-iframe,
+    #evenimente-video,
+    #vizualizare-pdf, #vizualizare-pdf embed,
+    #dv-prezentare, #dv-prezentare a, #dv-prezentare img,
+    #grid-galerie, #grid-galerie figure,
+    #galerie-statica figure,
+    .img-recomandare,
+    .container-iconite,
+    #hamburger, #ch-menu {
+        display: none !important;
+    }
+
+    /* Grid displays as block */
+    #main-grid {
+        display: block;
+    }
+
+    #main-grid > section {
+        display: block;
+        width: 100%;
+    }
+
+    #zona-1, #zona-2, #zona-3, #zona-4,
+    #zona-5, #zona-6, #zona-7, #zona-8 {
+        grid-area: unset;
+    }
+
+    /* Links as normal text */
+    a {
+        color: inherit !important;
+        text-decoration: none !important;
+    }
+
+    /* ---------- FIRST PAGE: header fills page, banner at bottom ---------- */
+    header {
+        position: relative;
+        height: 100vh;
+        box-sizing: border-box;
+        page-break-after: always;
+        break-after: page;
+        background: none;
+        border: none;
+        box-shadow: none;
+        margin-bottom: 0;
+        padding: 20px;
+    }
+
+    #t {
+        text-align: center;
+        font-size: 2.5rem;
+    }
+
+    /* Menu as vertical list, no sub-items */
+    .meniu {
+        display: block;
+        list-style: none;
+        padding: 0;
+        margin: 20px 0;
+        background: none;
+    }
+
+    .meniu > li {
+        display: block;
+        padding: 8px 0;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .meniu > li > a {
+        display: block;
+        padding: 5px 10px;
+        font-size: 1rem !important;
+        color: inherit !important;
+        text-transform: none;
+    }
+
+    .meniu > li > ul {
+        display: none !important;
+    }
+
+    .meniu > li > a i {
+        display: none;
+    }
+
+    /* Banner stuck at bottom of first page via absolute positioning */
+    header::after {
+        content: "Acesta este un proiect școlar!";
+        display: block;
+        position: absolute;
+        bottom: 2cm;
+        left: 15%;
+        width: 70%;
+        border: 4px inset black;
+        text-align: center;
+        padding: 12px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        background: white;
+        color: black;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+
+    /* Hide original banner in footer */
+    .banner-proiect {
+        display: none !important;
+    }
+
+    footer {
+        page-break-before: always;
+        break-before: page;
+    }
+
+    /* ---------- WATERMARK — every page, bottom-right ---------- */
+    #watermark-print {
+        display: block !important;
+        position: fixed;
+        bottom: 2cm;
+        right: 1cm;
+        width: 4cm;
+        height: 1cm;
+        border: 3px solid black;
+        border-radius: 8px;
+        text-align: center;
+        font-weight: bold;
+        opacity: 0.4;
+        margin: 0;
+        padding: 4px;
+        font-size: 0.8rem;
+        line-height: 1.3;
+        background: white;
+        color: black;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+
+    #watermark-print br {
+        display: inline;
+    }
+}
+
+/* ---------- PAGE MARGINS ---------- */
+@page :left {
+    margin-left: 3cm;
+    margin-right: 1cm;
+}
+
+@page :right {
+    margin-right: 3cm;
+    margin-left: 1cm;
+}
